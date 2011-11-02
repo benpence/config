@@ -1,0 +1,27 @@
+[user]
+	name = Ben Pence
+	email = email@benpence.com
+
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+    ui = auto
+
+[alias]
+    ; All commits, one line
+    commits = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+    ; One line commits with committer
+    blames = --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+    ; Edit last commit with newly added files and message
+    ; Use:
+    ;   git fix                 # Open message file for writing
+    ;   git fix FILE1 FILE2     # Add changes to FILE1 and FILE2 to top commit
+    ;   git fix -a              # Add all changes in working copy to top commit
+    fix = commit --amend -C HEAD
+
+    ; Less the diff
+    diffless = log -p

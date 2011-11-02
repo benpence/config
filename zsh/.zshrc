@@ -1,3 +1,75 @@
+### Prompt ###
+### Non-interactive shells ###
+[[ -z "$PS1" ]] && return
+
+# Load colors module
+autoload colors zsh/terminfo
+if [[ "terminfo[colors]" -ge 8 ]]; then
+    colors
+fi
+
+# Alias colors
+for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
+    eval PR_$color='%{$terminfo[bold]$fg[${(L)color}]%}'
+    eval PR_LIGHT_$color='%{$fg[${(L)color}]%}'
+
+    (( count = $count + 1 ))
+done
+PR_NO_COLOR="%{$terminfo[sgr0]%}"
+
+# Format prompt is [user@host:relative_path]$       ...       timestamp
+PS1="[$PR_MAGENTA%n$PR_NO_COLOR@$PR_YELLOW%m$PR_NO_COLOR:$PR_CYAN%~ $PR_GREEN%h$PR_NO_COLOR]%(!.#.$) " # Left
+RPS1="$PR_WHITE%B%*%b" # Right
+
+
+### History settings ###
+export HISTFILE=~/.zsh/history  # Location
+export HISTSIZE=100000          # Maximum events
+export SAVEHIST=100000          # Maximum unique events
+setopt extendedhistory          # With timestamps
+setopt INC_APPEND_HISTORY       # Write history to file incrementally, not on exit
+setopt HIST_IGNORE_ALL_DUPS     # Remove older duplicate command for new one
+setopt HIST_IGNORE_SPACE        # Don't save commands with leading space
+setopt HIST_REDUCE_BLANKS       # Trim superfluous whitespace from history
+setopt HIST_VERIFY              # Expand '!' history expansion before submit
+
+### editor = vim ###
+if [[ -x $(which vim) ]]
+then
+    export EDITOR="vim"
+    export USE_EDITOR=$EDITOR
+    export VISUAL=$EDITOR
+fi
+
+
+### MISC ###
+# Time long commands
+export REPORTTIME=30
+
+# Prompt on rm * 
+setopt RM_STAR_WAIT
+
+# Persist background tasks on exit
+setopt AUTO_CONTINUE
+
+# Watch other users login/out
+watch=notme
+export LOGCHECK=60
+
+### Aliases ###
+alias 'mkdir=mkdir -p'  # Make directories as needed
+alias 'ls=ls -G'        # ls color output
+
+### PATH ###
+# Python
+export PYTHONPATH="$PYTHONPATH"
+
+# ~/bin scripts
+if [ -d $HOME/bin ]; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
+### screen auto-title/shelltitle functions ###
 # if using GNU screen, let the zsh tell screen what the title and hardstatus
 # of the tab window should be.
 if [[ $TERM == "screen" ]]; then
