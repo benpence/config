@@ -1,0 +1,131 @@
+# No longer needed with .zshrc methods
+#shelltitle '$ |-'
+
+# Disable visual bell
+vbell off
+
+# Copy mode
+sorendition 04 mw # bold white text, magenta highlight
+defscrollback 10000 # Copy mode scrollback history
+
+# Screen stops sending characters to terminals not accepting
+nonblock on
+
+# Support for virtual terminals
+altscreen on
+
+# Selecting
+select 1
+
+# Stores hardcopies
+hardcopydir ~/.screen
+
+### Split screens ###
+# Caption
+caption splitonly "%?%F%{wd}%:%{Kd}%? %="
+
+# Move keys
+bind k focus up
+bind j focus down
+bind h focus left
+bind l focus right
+
+# Resize keys
+bind = resize =
+bind + resize +1
+bind - resize -1
+bind _ resize max
+
+### Hardstatus ###
+# commands
+backtick    1   0           0               whoami
+backtick    2   0           0               pwd
+
+# hardstatus format is [user@host:pwd][ screen1 screen2 ][day.month.year hour:minute]
+hardstatus alwayslastline
+hardstatus string "%{-b kd}%{w}[%3`%{+b m}%1`%{b}%{-b w}@%{+b y}%H%{-b w}:%{+b b}%2`%{-b w}][ %=%{w}%?%-w%?(%{+b W}%n %t %f%{-b})%?%+w%?%= ][%{+b B}%d.%m.%Y %{+b Y}%0C%{-b w}]" 
+
+# % ESCAPE STRINGS (from man page)
+# a      either 'am' or 'pm'
+# A      either 'AM' or 'PM'
+# c      current time HH:MM in 24h format
+# C      current time HH:MM in 12h format
+# d      day number
+# D      weekday name
+# f      flags of the window, see "windows" for meanings of the various flags
+# F      sets %? to true if the window has the focus
+# h      hardstatus of the window
+# H      hostname of the system
+# l      current load of the system
+# m      month number
+# M      month name
+# n      window number
+# P      sets %? to true if the current region is in copy/paste mode
+# S      session name
+# s      seconds
+# t      window title
+# u      all other users on this window
+# w      all window numbers and names. With '-' qualifier: up to the current window; with '+' qualifier: starting with the window after the current one.
+# W      all window numbers and names except the current one
+# y      last two digits of the year number
+# Y      full year number
+# ?      the part to the next '%?' is displayed only if a '%' escape inside the part expands to a non-empty string
+# :      else part of '%?'
+# =      pad  the  string to the display's width (like TeX's hfill). If a number is specified, pad to the percentage of the window's width.  A '0' qualifier tells screen
+#        to treat the number as absolute position.  You can specify to pad relative to the last absolute pad position by adding a '+' qualifier or to pad relative to the
+#        right margin by using '-'. The padding truncates the string if the specified position lies before the current position. Add the 'L' qualifier to change this.
+# <      same as '%=' but just do truncation, do not fill with spaces
+# >      mark  the  current  text position for the next truncation. When screen needs to do truncation, it tries to do it in a way that the marked position gets moved to
+#        the specified percentage of the output area. (The area starts from the last absolute pad position and ends with the position specified by the truncation  opera‐
+#        tor.) The 'L' qualifier tells screen to mark the truncated parts with '...'.
+# {      attribute/color modifier string terminated by the next "}"
+# `      Substitute with the output of a 'backtick' command. The length qualifier is misused to identify one of the commands.
+
+# The 'c' and 'C' escape may be qualified with a '0' to make screen use zero instead of space as fill character. The '0' qualifier also makes the '=' escape use absolute
+# positions. The 'n' and '=' escapes understand a length qualifier (e.g. '%3n'), 'D' and 'M' can be prefixed with 'L' to generate long names, 'w' and 'W' also  show  the
+# window flags if 'L' is given.
+
+# An attribute/color modifier is is used to change the attributes or the color settings. Its format is "[attribute modifier] [color description]". The attribute modifier
+# must be prefixed by a change type indicator if it can be confused with a color description. The following change types are known:
+
+# +      add the specified set to the current attributes
+# -      remove the set from the current attributes
+# !      invert the set in the current attributes
+# =      change the current attributes to the specified set
+
+# The attribute set can either be specified as a hexadecimal number or a combination of the following letters:
+# d      dim
+# u      underline
+# b      bold
+# r      reverse
+# s      standout
+# B      blinking
+
+# Colors are coded either as a hexadecimal number or two letters specifying the desired background and foreground color (in that order). The following colors are known:
+# 0 k black
+# 1 r red 
+# 2 g green
+# 3 y yellow
+# 4 b blue
+# 5 m magenta
+# 6 c cyan
+# 7 w white
+# 8 d default color
+# .      leave color unchanged
+
+# The capitalized versions of the letter specify bright colors. You can also use the pseudo-color 'i' to set just the brightness and leave the color unchanged.
+# A one digit/letter color description is treated as foreground or background color dependent on the current attributes: if reverse mode is set, the background color  is
+# changed  instead  of  the foreground color.  If you don't like this, prefix the color with a ".". If you want the same behavior for two-letter color descriptions, also
+# prefix them with a ".".
+# As a special case, "%{-}" restores the attributes and colors that were set before the last change was made (i.e., pops one level of the color-change stack).
+
+# Examples:
+# "G"    set color to bright green
+# "+b r" use bold red
+# "= yd" clear all attributes, write in default color on yellow background.
+# %-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<
+#       The available windows centered at the current window and truncated to the available width. The current window is displayed white on blue.  This can be used with
+#       "hardstatus alwayslastline".
+
+# %?%F%{.R.}%?%3n %t%? [%h]%?
+#       The window number and title and the window's hardstatus, if one is set.  Also use a red background if this is the active focus. Useful for "caption string".
