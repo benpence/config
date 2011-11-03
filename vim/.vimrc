@@ -37,20 +37,6 @@ set viminfo=%,\"4,'100,/100,:100,h,f1
 "           |  +-lines saved each register
 "           +-save/restore buffer list
 
-if !exists("view_made")
-    let view_made = 1
-    augroup view
-    	autocmd BufWinLeave ?* mkview
-    	autocmd BufWinEnter ?* silent loadview
-    augroup end
-endif
-
-" Coloring tweaks
-"colo happy
-"highlight NonText guifg=#4a4a59
-"highlight SpecialKey guifg=#4a4a59
-"highlight SpellBad ctermbg=16 ctermfg=red
-
 """ Command line options
 set ruler                           " Ruler on bottom of screen
 set showcmd                         " Show (partial) command in the last line

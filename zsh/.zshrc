@@ -2,25 +2,35 @@
 ### Non-interactive shells ###
 [[ -z "$PS1" ]] && return
 
-# Load colors module
-autoload colors zsh/terminfo
-if [[ "terminfo[colors]" -ge 8 ]]; then
-    colors
-fi
+### Alias colors from: http://www.understudy.net/custom.html ###
+# Foreground
+black=%{$'\e[0;30m'%}
+red=%{$'\e[0;31m'%}
+green=%{$'\e[0;32m'%}
+yellow=%{$'\e[0;33m'%}
+blue=%{$'\e[0;34m'%}
+purple=%{$'\e[0;35m'%}
+cyan=%{$'\e[0;36m'%}
+gray=%{$'\e[0;37m'%}
 
-# Alias colors
-for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
-    eval PR_$color='%{$terminfo[bold]$fg[${(L)color}]%}'
-    eval PR_LIGHT_$color='%{$fg[${(L)color}]%}'
+# Background
+bg_red=%{$'\e[0;41m'%}
+bg_green=%{$'\e[0;42m'%}
+bg_brown=%{$'\e[0;43m'%}
+bg_blue=%{$'\e[0;44m'%}
+bg_purple=%{$'\e[0;45m'%}
+bg_cyan=%{$'\e[0;46m'%}
+bg_gray=%{$'\e[0;47m'%}
 
-    (( count = $count + 1 ))
-done
-PR_NO_COLOR="%{$terminfo[sgr0]%}"
+# Attributes
+normal=%{$'\e[0m'%}
+nodisplay=%{$'\e[8m'%}
+reversecolors=%{$'\e[7m'%}
+reversecolorsoff=%{$'\e[27m'%}
 
 # Format prompt is [user@host:relative_path]$       ...       timestamp
-PS1="[$PR_MAGENTA%n$PR_NO_COLOR@$PR_YELLOW%m$PR_NO_COLOR:$PR_CYAN%~ $PR_GREEN%h$PR_NO_COLOR]%(!.#.$) " # Left
-RPS1="$PR_WHITE%B%*%b" # Right
-
+PROMPT="${at_normal}%(!.#.$) " # Left
+RPROMPT="[${blue}%B%~%b${normal}:${purple}%B%n%b${normal}@${yellow}%B%m%b${normal} %*]" # Right
 
 ### History settings ###
 export HISTFILE=~/.zsh/history  # Location
@@ -33,27 +43,34 @@ setopt HIST_IGNORE_SPACE        # Don't save commands with leading space
 setopt HIST_REDUCE_BLANKS       # Trim superfluous whitespace from history
 setopt HIST_VERIFY              # Expand '!' history expansion before submit
 
+### tab completion ###
+setopt AUTO_LIST                # List choices for tab completion
+setopt AUTO_MENU                # After showing list, rotate through
+# setopt AUTO_LIST AUTO_MENU    # Overides AUTO_MENU. Jump to first match automatically
+
+# Constrain completion list by command with regex
+compctl -g '*.java' + -g '*(-/)' javac                                  # javac only .java files
+compctl -g '*.c' + -g '*(-/)' gcc                                       # gcc only .c files
+compctl -g '*.gz' + -g '*(-/)' gunzip gzcat                             # extract only .gz files
+compctl -g '*(-/) .*(-/)' cd                                            # cd only to directories
+compctl -g '(^(*.o|*.class|*.jar|*.gz|*.gif|*.a|*.Z))' more less vim    # don't read binary files
+
 ### editor = vim ###
-if [[ -x $(which vim) ]]
+if [[ -x $(which vim) ]];
 then
     export EDITOR="vim"
     export USE_EDITOR=$EDITOR
     export VISUAL=$EDITOR
 fi
-
+# bindkey -e            # Use emacs zsh bindings instead of vi
 
 ### MISC ###
-# Time long commands
-export REPORTTIME=30
-
-# Prompt on rm * 
-setopt RM_STAR_WAIT
-
-# Persist background tasks on exit
-setopt AUTO_CONTINUE
+export REPORTTIME=30    # Time long commands
+setopt RM_STAR_WAIT     # Prompt on rm * 
+setopt AUTO_CONTINUE    # Persist background tasks on exit
 
 # Watch other users login/out
-watch=notme
+watch=notme             
 export LOGCHECK=60
 
 ### Aliases ###
