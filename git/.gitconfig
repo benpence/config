@@ -14,7 +14,7 @@
     commits = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
     ; One line commits with committer
-    blames = --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    blames = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
     ; Edit last commit with newly added files and message
     ; Use:
