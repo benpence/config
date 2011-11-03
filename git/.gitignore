@@ -1,0 +1,29 @@
+# Compiled
+*.swp
+*.class
+*.bin
+*.dll
+*.pyc
+*.exe
+*.so
+
+# Other version control
+.svn
+.hg
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs
+*.log
+
+# OS generated
+.DS_Store*
+Thumbs.db
