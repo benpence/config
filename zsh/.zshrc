@@ -53,7 +53,7 @@ compctl -g '*.java' + -g '*(-/)' javac                                  # javac 
 compctl -g '*.c' + -g '*(-/)' gcc                                       # gcc only .c files
 compctl -g '*.gz' + -g '*(-/)' gunzip gzcat                             # extract only .gz files
 compctl -g '*(-/) .*(-/)' cd                                            # cd only to directories
-compctl -g '(^(*.o|*.class|*.jar|*.gz|*.gif|*.a|*.Z))' more less vim    # don't read binary files
+#compctl -g '(^(*.o|*.class|*.jar|*.gz|*.gif|*.a|*.Z))' more less vim    # don't read binary files
 
 ### editor = vim ###
 if [[ -x $(which vim) ]];
@@ -75,7 +75,7 @@ export LOGCHECK=60
 
 ### Aliases ###
 alias 'mkdir=mkdir -p'  # Make directories as needed
-alias 'ls=ls -G'        # ls color output
+alias 'ls=ls --color'   # ls color output
 
 ### PATH ###
 # Python
