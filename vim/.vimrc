@@ -1,3 +1,6 @@
+""" Leader mappings
+let mapleader=","                   " dynamic prefix for future commands that use <leader>
+
 set visualbell t_vb=""              " disable visual bell
 set cursorline                      " highlights current line
 set ttyfast                         " for fast connections/local. improves redrawing
@@ -75,17 +78,16 @@ set lbr!                            " wrap long lines by certain characters, not
 set gfn=ProggySquareTTSZ\ 12        " Display in terminal
 set guifont=ProggySquareTTSZ\:h16   " Display in GUI
 
-""" Window Tabs
+""" Window tabs
 set guitablabel=%t                  " Show tab label shortened
-" shift-t new tab
-map T :tabnew<Return>               
+" leader-w quit
+nmap <leader>w :q<Return>
+" leader-t new tab
+nmap <leader>t :tabnew<Return>
 " ctrl-h tab left
 map <C-H> gT                        
 " ctrl-l tab right
 map <C-L> gt                        
-
-""" Leader mappings
-let mapleader=","                   " dynamic prefix for future commands that use <leader>
 
 " For toggling between relative and absolute numbering
 function! g:ToggleNumberMode() 
