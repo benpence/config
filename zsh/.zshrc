@@ -13,6 +13,15 @@ purple=%{$'\e[0;35m'%}
 cyan=%{$'\e[0;36m'%}
 gray=%{$'\e[0;37m'%}
 
+light_black=%{$'\e[1;30m'%}
+light_red=%{$'\e[1;31m'%}
+light_green=%{$'\e[1;32m'%}
+light_yellow=%{$'\e[1;33m'%}
+light_blue=%{$'\e[1;34m'%}
+light_purple=%{$'\e[1;35m'%}
+light_cyan=%{$'\e[1;36m'%}
+light_gray=%{$'\e[1;37m'%}
+
 # Background
 bg_red=%{$'\e[0;41m'%}
 bg_green=%{$'\e[0;42m'%}
@@ -30,7 +39,7 @@ reversecolorsoff=%{$'\e[27m'%}
 
 # Format prompt is [user@host:relative_path]$       ...       timestamp
 PROMPT="${at_normal}%(!.#.$) " # Left
-RPROMPT="[${blue}%B%~%b${normal}:${purple}%B%n%b${normal}@${yellow}%B%m%b${normal} %*]" # Right
+RPROMPT="[${<<<<PATH COLOR>>>>}%~${normal}:${<<<<USER COLOR>>>>}%n${normal}@${<<<<HOST COLOR>>>>}%m${normal} %*]" # Right
 
 ### History settings ###
 export HISTFILE=~/.zsh/history  # Location
@@ -75,7 +84,7 @@ export LOGCHECK=60
 
 ### Aliases ###
 alias 'mkdir=mkdir -p'  # Make directories as needed
-alias 'ls=ls --color'   # ls color output
+alias 'ls=ls <<<<LS COLOR PARAMETER>>>>'   # ls color output
 
 ### PATH ###
 # Python

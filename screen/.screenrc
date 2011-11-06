@@ -1,11 +1,13 @@
 # No longer needed with .zshrc methods
 #shelltitle '$ |-'
 
+startup_message on
+
 # Disable visual bell
 vbell off
 
 # Copy mode
-sorendition 04 mw # bold white text, magenta highlight
+<<<<RENDITION>>>> # bold white text, magenta highlight
 defscrollback 10000 # Copy mode scrollback history
 
 # Screen stops sending characters to terminals not accepting
@@ -27,8 +29,7 @@ caption splitonly "%?%F%{wd}%:%{Kd}%? %="
 # Move keys
 bind k focus up
 bind j focus down
-bind h focus left
-bind l focus right
+<<<<FOCUS>>>>
 
 # Resize keys
 bind = resize =
@@ -43,7 +44,7 @@ backtick    2   0           0               pwd
 
 # hardstatus format is [user@host:pwd][ screen1 screen2 ][day.month.year hour:minute]
 hardstatus alwayslastline
-hardstatus string "%{-b kd}%{w}[%3`%{+b m}%1`%{b}%{-b w}@%{+b y}%H%{-b w}:%{+b b}%2`%{-b w}][ %=%{w}%?%-w%?(%{+b W}%n %t %f%{-b})%?%+w%?%= ][%{+b B}%d.%m.%Y %{+b Y}%0C%{-b w}]" 
+hardstatus string "%{-b kd}%{w}[%3`%{+b R}%1`%{b}%{-b w}@%{+b Y}%H%{-b w}:%{+b G}%2`%{-b w}][ %=%{w}%?%-w%?(%{+b W}%n %t %f%{-b})%?%+w%?%= ][%{+b B}%d.%m.%Y %{+b Y}%0C%{-b w}]" 
 
 # % ESCAPE STRINGS (from man page)
 # a      either 'am' or 'pm'
