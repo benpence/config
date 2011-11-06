@@ -11,16 +11,16 @@ zsh:
                 fedora: "--color"
             USER COLOR:
                 osx:    light_red
-                ubuntu: red
-                fedora: red
+                ubuntu: light_red
+                fedora: light_purple
             HOST COLOR:
                 osx:    light_yellow
-                ubuntu: yellow
-                fedora: yellow
+                ubuntu: light_yellow
+                fedora: light_yellow
             PATH COLOR:
                 osx:    light_green
-                ubuntu: magenta
-                fedora: magenta
+                ubuntu: light_green
+                fedora: light_blue 
 vim:
     directories:
         - .vim session backup
@@ -38,12 +38,32 @@ screen:
         .screenrc:
             RENDITION:
                 osx: sorendition 04 Kd
-                ubuntu: rendition so 04 Kd
+                ubuntu: sorendition 04 Kd
                 fedora: rendition so 04 Kd
             FOCUS:
                 osx: ""
                 ubuntu: "bind h focus left\nbind l focus right"
                 fedora: "bind h focus left\nbind l focus right"
+            USER COLOR:
+                osx: R
+                ubuntu: R
+                fedora: M
+            HOST COLOR:
+                osx: Y
+                ubuntu: Y
+                fedora: Y
+            PATH COLOR:
+                osx: G
+                ubuntu: G
+                fedora: B
+            TIME COLOR:
+                osx: Y
+                ubuntu: Y
+                fedora: Y
+            DATE COLOR:
+                osx: B
+                ubuntu: B
+                fedora: B
 git:
     files:    
         - .gitconfig

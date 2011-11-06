@@ -44,7 +44,7 @@ backtick    2   0           0               pwd
 
 # hardstatus format is [user@host:pwd][ screen1 screen2 ][day.month.year hour:minute]
 hardstatus alwayslastline
-hardstatus string "%{-b kd}%{w}[%3`%{+b R}%1`%{b}%{-b w}@%{+b Y}%H%{-b w}:%{+b G}%2`%{-b w}][ %=%{w}%?%-w%?(%{+b W}%n %t %f%{-b})%?%+w%?%= ][%{+b B}%d.%m.%Y %{+b Y}%0C%{-b w}]" 
+hardstatus string "%{-b kd}%{w}[%{+b <<<<USER COLOR>>>>}%1`%{-b w}@%{+b <<<<HOST COLOR>>>>}%H%{-b w}:%{+b <<<<PATH COLOR>>>>}%2`%{-b w}][ %=%{w}%?%-w%?(%{+b W}%n %t %f%{-b})%?%+w%?%= ][%{+b <<<<DATE COLOR>>>>}%d.%m.%Y %{+b <<<<TIME COLOR>>>>}%0c%{-b w}]" 
 
 # % ESCAPE STRINGS (from man page)
 # a      either 'am' or 'pm'
