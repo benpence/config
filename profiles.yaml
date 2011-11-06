@@ -42,8 +42,8 @@ screen:
                 fedora: rendition so 04 Kd
             FOCUS:
                 osx: ""
-                ubuntu: bind h focus left\nbind l focus right
-                fedora: bind h focus left\nbind l focus right
+                ubuntu: "bind h focus left\nbind l focus right"
+                fedora: "bind h focus left\nbind l focus right"
 git:
     files:    
         - .gitconfig
