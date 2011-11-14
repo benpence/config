@@ -1,4 +1,8 @@
 ### Prompt ###
+
+### Default UMASK (clear group, other permissions) ###
+umask 077
+
 ### Non-interactive shells ###
 [[ -z "$PS1" ]] && return
 
@@ -143,3 +147,4 @@ if [[ $TERM == "screen" ]]; then
     screen_set $tab_title $tab_hardstatus
   }
 fi
+
