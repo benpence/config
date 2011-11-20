@@ -73,6 +73,7 @@ set winminheight=0                  " split windows are collapsible to just stat
 set hlsearch
 
 set lbr!                            " wrap long lines by certain characters, not arbitrary
+set nowrap
 
 """ Font
 set gfn=ProggySquareTTSZ\ 12        " Display in terminal
