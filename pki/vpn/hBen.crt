@@ -1,0 +1,73 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 3 (0x3)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, ST=DC, L=Washington, O=benpence.com, CN=vpn.benpence.com/name=Ben Pence/emailAddress=email@benpence.com
+        Validity
+            Not Before: Oct 30 23:02:51 2011 GMT
+            Not After : Oct 27 23:02:51 2021 GMT
+        Subject: C=US, ST=DC, L=Washington, O=benpence.com, CN=hBen/name=Ben Pence/emailAddress=email@benpence.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (1024 bit)
+                Modulus:
+                    00:dd:8c:68:ec:c4:7e:d4:11:f5:fb:9f:c0:24:c4:
+                    b0:ad:6c:cc:5b:6d:fd:f8:01:c0:fe:b1:ce:51:3d:
+                    f9:fc:07:e9:8e:34:c7:15:17:25:8f:91:cc:1e:95:
+                    a9:70:2a:15:fc:d9:ba:65:02:b4:7b:97:cd:1e:f0:
+                    e4:28:3d:53:6b:d8:30:65:7e:63:38:68:37:b2:4d:
+                    b0:86:53:16:38:25:f8:05:16:06:69:c3:df:88:d1:
+                    a3:b8:45:c8:ba:0a:6e:81:c7:1a:5f:e1:a5:01:8e:
+                    f1:fc:a7:93:ef:ac:46:94:8c:05:bd:c1:13:3b:b3:
+                    b8:e4:ad:6c:0e:a9:32:5b:61
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                Easy-RSA Generated Certificate
+            X509v3 Subject Key Identifier: 
+                94:EA:B1:30:6C:B4:6B:27:13:51:DE:B9:BE:4A:10:F6:C1:30:27:84
+            X509v3 Authority Key Identifier: 
+                keyid:B0:CB:DF:7E:C7:14:F4:6F:C2:3C:33:88:08:3B:D3:C7:22:8D:8F:78
+                DirName:/C=US/ST=DC/L=Washington/O=benpence.com/CN=vpn.benpence.com/name=Ben Pence/emailAddress=email@benpence.com
+                serial:99:91:CE:63:D2:BA:3B:07
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+    Signature Algorithm: sha1WithRSAEncryption
+        b7:cf:6e:df:b7:00:ce:c6:c2:51:2c:f7:53:66:5c:83:27:d8:
+        8f:56:ad:d7:c4:19:bf:b8:17:9b:7c:d2:07:2a:c2:f3:76:23:
+        3d:e6:fe:6a:7a:58:91:eb:d0:76:0c:ec:1b:d4:07:53:af:93:
+        6d:45:a0:74:74:ee:40:79:ba:05:2e:1d:87:f4:63:37:67:b4:
+        8f:05:48:d8:35:62:be:7d:09:a8:b7:41:de:69:ec:4f:66:de:
+        cc:af:87:97:65:5c:00:f0:22:a3:0e:20:c2:71:73:c5:5d:57:
+        1c:1c:4a:1d:f3:59:5c:1f:d2:e1:8a:ee:75:e8:ef:f6:72:13:
+        be:5f
+-----BEGIN CERTIFICATE-----
+MIID7TCCA1agAwIBAgIBAzANBgkqhkiG9w0BAQUFADCBmDELMAkGA1UEBhMCVVMx
+CzAJBgNVBAgTAkRDMRMwEQYDVQQHEwpXYXNoaW5ndG9uMRUwEwYDVQQKEwxiZW5w
+ZW5jZS5jb20xGTAXBgNVBAMTEHZwbi5iZW5wZW5jZS5jb20xEjAQBgNVBCkTCUJl
+biBQZW5jZTEhMB8GCSqGSIb3DQEJARYSZW1haWxAYmVucGVuY2UuY29tMB4XDTEx
+MTAzMDIzMDI1MVoXDTIxMTAyNzIzMDI1MVowgYwxCzAJBgNVBAYTAlVTMQswCQYD
+VQQIEwJEQzETMBEGA1UEBxMKV2FzaGluZ3RvbjEVMBMGA1UEChMMYmVucGVuY2Uu
+Y29tMQ0wCwYDVQQDEwRoQmVuMRIwEAYDVQQpEwlCZW4gUGVuY2UxITAfBgkqhkiG
+9w0BCQEWEmVtYWlsQGJlbnBlbmNlLmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAw
+gYkCgYEA3Yxo7MR+1BH1+5/AJMSwrWzMW239+AHA/rHOUT35/AfpjjTHFRclj5HM
+HpWpcCoV/Nm6ZQK0e5fNHvDkKD1Ta9gwZX5jOGg3sk2whlMWOCX4BRYGacPfiNGj
+uEXIugpugccaX+GlAY7x/KeT76xGlIwFvcETO7O45K1sDqkyW2ECAwEAAaOCAU8w
+ggFLMAkGA1UdEwQCMAAwLQYJYIZIAYb4QgENBCAWHkVhc3ktUlNBIEdlbmVyYXRl
+ZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQUlOqxMGy0aycTUd65vkoQ9sEwJ4Qwgc0G
+A1UdIwSBxTCBwoAUsMvffscU9G/CPDOICDvTxyKNj3ihgZ6kgZswgZgxCzAJBgNV
+BAYTAlVTMQswCQYDVQQIEwJEQzETMBEGA1UEBxMKV2FzaGluZ3RvbjEVMBMGA1UE
+ChMMYmVucGVuY2UuY29tMRkwFwYDVQQDExB2cG4uYmVucGVuY2UuY29tMRIwEAYD
+VQQpEwlCZW4gUGVuY2UxITAfBgkqhkiG9w0BCQEWEmVtYWlsQGJlbnBlbmNlLmNv
+bYIJAJmRzmPSujsHMBMGA1UdJQQMMAoGCCsGAQUFBwMCMAsGA1UdDwQEAwIHgDAN
+BgkqhkiG9w0BAQUFAAOBgQC3z27ftwDOxsJRLPdTZlyDJ9iPVq3XxBm/uBebfNIH
+KsLzdiM95v5qeliR69B2DOwb1AdTr5NtRaB0dO5AeboFLh2H9GM3Z7SPBUjYNWK+
+fQmot0HeaexPZt7Mr4eXZVwA8CKjDiDCcXPFXVccHEod81lcH9Lhiu516O/2chO+
+Xw==
+-----END CERTIFICATE-----
