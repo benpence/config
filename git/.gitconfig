@@ -25,3 +25,6 @@
 
     ; Less the diff
     diffless = log -p
+
+[core]
+	excludesfile = <<<<HOME BASE>>>>/ben/.gitignore

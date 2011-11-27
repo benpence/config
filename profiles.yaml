@@ -29,6 +29,12 @@ vim:
         - .vim session swp
     files:
         - .vimrc
+    substitutions:
+        .gitconfig:
+            HOME BASE: 
+                osx: /Users
+                ubuntu: /home
+                fedora: /home
 screen:
     directories:
         - .screen
