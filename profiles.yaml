@@ -29,12 +29,19 @@ vim:
         - .vim session swp
     files:
         - .vimrc
-    substitutions:
-        .gitconfig:
-            HOME BASE: 
-                osx: /Users
-                ubuntu: /home
-                fedora: /home
+        - .vim after syntax haml.vim
+        - .vim after syntax html.vim
+        - .vim compiler coffee.vim
+        - .vim ftdetect coffee.vim
+        - .vim ftdetect eco.vim
+        - .vim ftdetect scala.vim
+        - .vim ftplugin coffee.vim
+        - .vim indent coffee.vim
+        - .vim indent scala.vim
+        - .vim syntax coffee.vim
+        - .vim syntax eco.vim
+        - .vim syntax scala.vim
+
 screen:
     directories:
         - .screen
@@ -74,6 +81,13 @@ git:
     files:    
         - .gitconfig
         - .gitignore
+    substitutions:
+        .gitconfig:
+            HOME BASE: 
+                osx: /Users
+                ubuntu: /home
+                fedora: /home
+
 fonts:
     directories:
         - .fonts

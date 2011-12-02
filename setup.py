@@ -31,6 +31,14 @@ def copy_files(module_name, module):
         path = os.path.join(*source.split())
         destination = os.path.join(HOME, path)
 
+        destination_dir = os.path.dirname(destination)
+
+        try:
+            os.makedirs(destination_dir)
+
+        except OSError as e:
+            if e.errno != errno.EEXIST:
+                raise
 
         try:
             shutil.copyfile(
