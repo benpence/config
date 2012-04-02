@@ -29,18 +29,33 @@ vim:
         - .vim session swp
     files:
         - .vimrc
+
         - .vim after syntax haml.vim
         - .vim after syntax html.vim
+
+        - .vim syntax eco.vim
+        - .vim ftdetect eco.vim
+
         - .vim compiler coffee.vim
         - .vim ftdetect coffee.vim
-        - .vim ftdetect eco.vim
-        - .vim ftdetect scala.vim
         - .vim ftplugin coffee.vim
         - .vim indent coffee.vim
-        - .vim indent scala.vim
         - .vim syntax coffee.vim
-        - .vim syntax eco.vim
+
+        - .vim ftdetect scala.vim
+        - .vim indent scala.vim
         - .vim syntax scala.vim
+
+        - .vim autoload go complete.vim
+        - .vim ftdetect gofiletype.vim
+        - .vim ftplugin go fmt.vim
+        - .vim ftplugin go godoc.vim
+        - .vim ftplugin go import.vim
+        - .vim indent go.vim
+        - .vim plugin godoc.vim
+        - .vim readme.txt
+        - .vim syntax go.vim
+        - .vim syntax godoc.vim
 
 screen:
     directories:
