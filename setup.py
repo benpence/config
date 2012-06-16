@@ -1,12 +1,12 @@
 import sys
 import os
 import shutil
-import yaml
+import json
 import errno
 
 SUBSTITUTION_TAG = "<<<<%s>>>>"
 HOME = os.environ['HOME']
-YAML_FILE = 'profiles.yaml'
+PROFILE_FILE = 'profiles.json'
 
 def log(message, tabs=0):
     print '    ' * tabs + message
@@ -14,8 +14,7 @@ def log(message, tabs=0):
 def create_directories(module_name, module):
     """ Create directories necessary for program (including directories for files)"""
     for directory in module["directories"]:
-        path = os.path.join(HOME, *directory.split())
-
+        path = os.path.join(HOME, directory)
 
         try:
             os.makedirs(path)
@@ -27,8 +26,7 @@ def create_directories(module_name, module):
 
 def copy_files(module_name, module):
     """ Copy over the configuration files """
-    for source in module["files"]:
-        path = os.path.join(*source.split())
+    for path in module["files"]:
         destination = os.path.join(HOME, path)
 
         destination_dir = os.path.dirname(destination)
@@ -43,7 +41,7 @@ def copy_files(module_name, module):
         try:
             shutil.copyfile(
                 os.path.join(module_name, path),
-                os.path.join(HOME, path)
+                os.path.join(destination)
             )
 
             log("Copying %s to %s" % (os.path.join(module_name, path), destination), tabs=1)
@@ -54,7 +52,7 @@ def copy_files(module_name, module):
 def make_substitutions(module_name, module, current_os):
     """ Fill in OS-specific content """
     for source, substitutions in module["substitutions"].items():
-        path = os.path.join(HOME, *source.split())
+        path = os.path.join(HOME, source)
 
         log("Editing " + path, tabs=1)
 
@@ -63,7 +61,7 @@ def make_substitutions(module_name, module, current_os):
 
         for tag_name, substitution in substitutions.items():
             replacement = substitution[current_os]
-            contents = contents.replace(SUBSTITUTION_TAG % tag_name, replacement)
+            contents = contents.replace(str(SUBSTITUTION_TAG % tag_name), str(replacement))
 
         with open(path, 'w') as write_file:
             write_file.write(contents)
@@ -93,7 +91,7 @@ def main():
         usage()
 
     deploy(
-        yaml.load(open(YAML_FILE, 'r')),
+        json.load(open(PROFILE_FILE, 'r')),
         sys.argv[1]
     )
 

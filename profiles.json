@@ -1,0 +1,141 @@
+{
+    "fonts" :{
+        "directories":[
+            ".fonts"
+        ],
+        "files" : [
+            ".fonts/ProggySquareSZ.ttf"
+        ]
+    },
+    "git" : {
+        "files" : [
+            ".gitconfig",
+            ".gitignore"
+        ],
+        "substitutions" : {
+            ".gitconfig" : {
+                "HOME BASE" : {
+                    "fedora" :  "/home",
+                    "osx" :     "/Users",
+                    "ubuntu" :  "/home"
+                }
+            }
+        }
+    },
+    "screen" : {
+        "directories" : [
+            ".screen" 
+        ],
+        "files" : [
+            ".screenrc"
+        ],
+        "substitutions" : {
+            ".screenrc" : {
+                "DATE COLOR" : {
+                    "fedora" :  "B",
+                    "osx" :     "B",
+                    "ubuntu" :  "B"
+                },
+                "FOCUS" : {
+                    "fedora" :  "bind h focus left\nbind l focus right",
+                    "osx" :     "",
+                    "ubuntu" :  "bind h focus left\nbind l focus right"
+                },
+                "HOST COLOR" : {
+                    "fedora" :  "Y",
+                    "osx" :     "Y",
+                    "ubuntu" :  "Y"
+                },
+                "PATH COLOR" : {
+                    "fedora" :  "B",
+                    "osx" :     "G",
+                    "ubuntu" :  "G"
+                },
+                "RENDITION" : {
+                    "fedora" :  "rendition so 04 Kd",
+                    "osx" :     "sorendition 04 Kd",
+                    "ubuntu" :  "sorendition 04 Kd"
+                },
+                "TIME COLOR" : {
+                    "fedora" :  "Y",
+                    "osx" :     "Y",
+                    "ubuntu" :  "Y"
+                },
+                "USER COLOR" : {
+                    "fedora" :  "M",
+                    "osx" :     "R",
+                    "ubuntu" :  "R"
+                }
+            }
+        }
+    },
+    "vim" : {
+        "directories" : [
+            ".vim/session/backup",
+            ".vim/session/undo",
+            ".vim/session/view",
+            ".vim/session/swp"
+        ],
+        "files" : [
+            ".vimrc",
+
+            ".vim/after/syntax/haml.vim",
+            ".vim/after/syntax/html.vim",
+            ".vim/syntax/eco.vim",
+            ".vim/ftdetect/eco.vim",
+
+            ".vim/compiler/coffee.vim",
+            ".vim/ftdetect/coffee.vim",
+            ".vim/ftplugin/coffee.vim",
+            ".vim/indent/coffee.vim",
+            ".vim/syntax/coffee.vim",
+
+            ".vim/ftdetect/scala.vim",
+            ".vim/indent/scala.vim",
+            ".vim/syntax/scala.vim",
+
+            ".vim/autoload/go/complete.vim",
+            ".vim/ftdetect/gofiletype.vim",
+            ".vim/ftplugin/go/fmt.vim",
+            ".vim/ftplugin/go/godoc.vim",
+            ".vim/ftplugin/go/import.vim",
+            ".vim/indent/go.vim",
+            ".vim/plugin/godoc.vim",
+            ".vim/syntax/go.vim",
+            ".vim/syntax/godoc.vim",
+            ".vim/go_readme.txt"
+        ]
+    },
+    "zsh" : {
+        "directories" : [
+            ".zsh"
+        ],
+        "files" : [
+            ".zshrc"
+        ],
+        "substitutions" : {
+            ".zshrc" : {
+                "HOST COLOR" : {
+                    "fedora" :  "light_yellow",
+                    "osx" :     "light_yellow",
+                    "ubuntu" :  "light_yellow"
+                },
+                "LS COLOR PARAMETER" : {
+                    "fedora" :  "--color",
+                    "osx" :     "-G",
+                    "ubuntu" :  "--color"
+                },
+                "PATH COLOR" : {
+                    "fedora" :  "light_blue",
+                    "osx" :     "light_green",
+                    "ubuntu" :  "light_green"
+                },
+                "USER COLOR" : {
+                    "fedora" :  "light_purple",
+                    "osx" :     "light_red",
+                    "ubuntu" :  "light_red"
+                }
+            }
+        }
+    }
+}
