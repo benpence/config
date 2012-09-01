@@ -59,7 +59,12 @@ set expandtab                       " insert spaces instead of tabs
 set cindent                         " 
 set smartindent                     " 
 
-" Searching
+""" Visual Mode 
+" Tab shifts keep selection
+vnoremap < <gv
+vnoremap > >gv
+
+""" Searching
 set ignorecase                      " search case insensitively
 set smartcase                       " / ? n N case-sensitive with capital letters (requires ignorecase)
 set gdefault                        " Reverse effect of 'g' with :substitute (no g -> all, g -> one, gg -> all)
