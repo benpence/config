@@ -1,7 +1,7 @@
 ### Prompt ###
 
 ### Default UMASK (clear group, other permissions) ###
-umask 077
+#umask 077
 
 ### Non-interactive shells ###
 [[ -z "$PS1" ]] && return
@@ -79,7 +79,7 @@ fi
 
 ### MISC ###
 export REPORTTIME=30    # Time long commands
-setopt RM_STAR_WAIT     # Prompt on rm * 
+#setopt RM_STAR_WAIT     # Prompt on rm * 
 setopt AUTO_CONTINUE    # Persist background tasks on exit
 
 # Watch other users login/out
@@ -88,7 +88,7 @@ export LOGCHECK=60
 
 ### Aliases ###
 alias 'mkdir=mkdir -p'  # Make directories as needed
-alias 'ls=ls <<<<LS COLOR PARAMETER>>>>'   # ls color output
+#alias 'ls=ls <<<<LS COLOR PARAMETER>>>>'   # ls color output
 
 ### PATH ###
 # Python
