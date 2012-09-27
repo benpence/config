@@ -8,9 +8,12 @@ set scrolloff=3                     " buffer between cursor line and top/bottom
 set relativenumber                  " show relative line numbers fro cursor line
 set timeoutlen=400                  " max milliseconds between waiting on keys in a :mapping sequence
 set autochdir                       " automatically change directories when opening buffer
-syntax on                           " automatic syntax highlighting
 set autoindent                      " new line matches current line's indent
 set backspace=indent,eol,start      " allows backspacing over autoindent, line breaks, start of insert
+
+""" Syntax
+syntax on                           " automatic syntax highlighting
+au BufRead,BufNewFile *.json set filetype=javascript " Javascript
 
 """ Save environment on quit
 " Backups before write
