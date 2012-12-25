@@ -76,6 +76,7 @@ then
     export VISUAL=$EDITOR
 fi
 # bindkey -e            # Use emacs zsh bindings instead of vi
+set -o vi               # Use vi bindings for moving around command prompt
 
 ### MISC ###
 export REPORTTIME=30    # Time long commands
@@ -94,10 +95,14 @@ alias 'mkdir=mkdir -p'  # Make directories as needed
 # Python
 export PYTHONPATH="$PYTHONPATH"
 
+# Go
+export GOPATH="$GOPATH" # Dir containing src,pkg,bin dirs for importing in go
+
 # ~/bin scripts
 if [ -d $HOME/bin ]; then
     export PATH="$HOME/bin:$PATH"
 fi
+
 
 ### screen auto-title/shelltitle functions ###
 # if using GNU screen, let the zsh tell screen what the title and hardstatus
@@ -147,4 +152,3 @@ if [[ $TERM == "screen" ]]; then
     screen_set $tab_title $tab_hardstatus
   }
 fi
-
