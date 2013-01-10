@@ -98,11 +98,13 @@ map <C-H> gT
 " ctrl-l tab right
 map <C-L> gt                        
 
-" For toggling between relative and absolute numbering
+" Toggle between relative numbering, absolute numbering, and no numbering
 function! g:ToggleNumberMode() 
     if(&rnu == 1) 
         set nu 
-    else 
+    elseif(&nu == 1)
+        set nonumber
+    else
         set rnu 
     endif 
 endfunc 
