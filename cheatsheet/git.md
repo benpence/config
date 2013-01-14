@@ -1,3 +1,4 @@
+
 # Branch
 
     # Move uncommitted changes to branch/new branch
@@ -20,7 +21,7 @@
     git stash -u
 
     # Apply changes from stash
-    git stash apply pop         # first
+    git stash apply pop         # first and drop first on success
     git stash apply stash@{0}   # first
     git stash apply stash@{1}   # second
 
@@ -33,3 +34,16 @@
 
     # Retroactively edit commit history interactively after <commit>
     git rebase -i <commit>
+
+# Diff
+    
+    # Compare current unstaged changes
+    git diff                                # To the HEAD
+    git diff HEAD                           # ...
+    git diff HEAD~<number>                  # To <number> commits before HEAD
+
+    # Compare changes
+    git diff HEAD           HEAD~<number>   
+    git diff HEAD~<number>  HEAD~<number>
+    git diff <first_commit> <second_commit>
+    git diff <first_commit  HEAD~<number>
