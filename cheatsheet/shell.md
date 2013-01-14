@@ -4,6 +4,9 @@
 
     # Tunnel traffic sent to <local_port> to <remote_peer>:<remote_port> via <remote_user>@<remote_host>
     ssh <remote_user>@<remote_host> -L <local_port>:<remote_peer>:<remote_port> -N  # -f to run in background
+
+    # Tunnel traffic sent to <local_port> to <remote_host> and resolve destination based on application protocol
+    ssh  <remote_user>@<remote_host> -D <local_port>
     
     # Reverse tunnel traffic sent to <remote_port> on <remote_host> to <local_peer>:<local_port> via localhost
     ssh <remote_user>@<remote_host> -R <remote_port>:<local_peer>:<local_port> -N   # -f to run in background
@@ -12,7 +15,10 @@
     # Example: Evade firewall rule by tunneling traffic sent to local port 3000 to talk.google.com:5222 via public_site
     ssh user@public_site -L 3000:talk.google.com:5222 home -N
 
-    # Example: ssh into my home box from work through the work_server port 2222
+    # Example: Use local port 8888 to proxy traffic through trusted_server
+    ssh user@trusted_server -D 8888 -N
+
+    # Example: ssh into home box from work through the work_server port 2222
     ssh user@work_server -R 2222:localhost:22 -N
 
     # Example: Let a public site access a local resource (that is internally accessible only) over port 7777
