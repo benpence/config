@@ -12,6 +12,14 @@
     # Delete <branch>
     git branch -d <branch>
 
+# Add
+
+    # Interactively use the add command
+    git add -i
+
+    # Add in patch mode. Stage diff hunks independently
+    git add -p
+
 # Stash
 
     # Push all tracked changes onto stack
