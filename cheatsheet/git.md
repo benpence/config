@@ -29,7 +29,7 @@
     git stash -u
 
     # Apply changes from stash
-    git stash apply pop         # first and drop first on success
+    git stash apply pop         # first and (on success) remove first from stash
     git stash apply stash@{0}   # first
     git stash apply stash@{1}   # second
 
