@@ -14,10 +14,13 @@
 
 # Add
 
-    # Interactively use the add command
+    # Edit complete diff and add changes
+    git add -e
+
+    # Interactive mode. Stage diff hunks independently
     git add -i
 
-    # Add in patch mode. Stage diff hunks independently
+    # Interactive->patch mode. 
     git add -p
 
 # Stash
