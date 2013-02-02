@@ -3,18 +3,30 @@
     # Fill a file with zeroes
     head -c <file size> /dev/zero > <file>
 
-    # Use file as block device (maps /dev/loop0 as block device over <file>)
-    losetup /dev/loop0 <file>
+    # Use file as block device or filesystem
+    losetup /dev/loop0 <file>                               # Block device
+    mount -o loop <file> <mount_directory>                  # Filesystem
+
+    # Use parition embedded in file as block device or filesystem
+    fdisk                                                   # View bytes per sector and partition starting sector
+
+    losetup \                                               # Block device
+        -o $((<sector> * <bytes_per_sector>)) \
+        /dev/loop<integer> \
+         <file>             
+    mount \                                                 # Filesystem
+        -o loop,offset=$((<sector> * <bytes_per_sector>)) \ 
+         <file> \
+        <mount_directory>    
 
 # Partitions
 
-    # View partitions recognized by kernel
-    cat /proc/partitions
+    cat /proc/partitions                        # View partitions recognized by kernel
 
-    # Create new filesystem on block device
-    mkfs.<filesystem>
+    mkfs.<filesystem_type> <block_device>       # New filesystem on block device
+    mkfs -t <filesystem_type> <block_device>    # New filesystem on block device
 
-    # Create swap
+    mkswap <block_device>                       # New swap volume
 
 # fstab
 
@@ -33,15 +45,10 @@
     mdadm
 
 # LUKS
-
-    # Create volume on block device
-    cryptsetup luksFormat
-
-    # Map volume as block device (creates entry in /dev/mapper)
-    cryptsetup luksOpen /dev/<encrypted block device> <decrypted name>
-
-    # Unmap decrypted volume
-    cryptsetup luksClose <decrypted name>
+    
+    cryptsetup luksFormat <file/block_device>       # Encrypt file (uses loopback) or block device 
+    cryptsetup luksOpen <file/block_device> <name>  # Decrypt as /dev/mapper/<name>
+    cryptsetup luksClose <decrypted name>           # Unmap decrypted volume
 
 # LVM
 
@@ -50,3 +57,14 @@
 
     # Deactivate logical volumes and destroy /dev/<volume group>/<logical volume>
     lvchange -an <volume group>
+
+    # Shrink a logical volume containing a filesystem
+    e2fsck -f /dev/<volume group>/<logical volume>              # Check filesystem (for resize2fs)
+    resize2fs /dev/<volume group>/<logical volume> <size>       # Shrink filesystem
+
+    lvresize  /dev/<volume group>/<logical volume> -L <size>    # Shrink volume
+    
+    volume=/dev/<volume group>/<logical volume>                 # Add extents to volume until big enough
+    while { e2fsck -y $volume > /dev/null; [ $? -ne 0 ]; }; do  # for filesystem (increase extents number
+            lvextend -l +1 $volume;                             # as desired)
+    done;
