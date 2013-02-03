@@ -68,7 +68,7 @@
 # Bridges
 ## Non-Persistent
 
-    brctl                                       # Show bridges
+    brctl show                                  # Show bridges
 
     brctl addbr <bridge_interface>              # Add bridge
     brctl stp <bridge_interface> <on/off>       # spanning tree protocol (off ONLY if no loops in network)
