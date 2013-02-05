@@ -10,7 +10,9 @@
     git branch -M <old_branch> <new_branch> # Replaces <new_branch>
 
     # Delete <branch>
-    git branch -d <branch>
+    git branch -d <branch>      # Locally
+    git push <repo> :<branch>   # Remotely
+
 
 # Add
 
