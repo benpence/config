@@ -4,29 +4,29 @@
     head -c <file size> /dev/zero > <file>
 
     # Use file as block device or filesystem
-    losetup /dev/loop0 <file>                               # Block device
-    mount -o loop <file> <mount_directory>                  # Filesystem
+    losetup /dev/loop0 <file>                                   # block device
+    mount -o loop <file> <mount_directory>                      # filesystem
 
     # Use parition embedded in file as block device or filesystem
-    fdisk                                                   # View bytes per sector and partition starting sector
+    fdisk                                                       # View bytes per sector and partition starting sector
 
-    losetup \                                               # Block device
+    losetup \                                                   # Block device
         -o $((<sector> * <bytes_per_sector>)) \
         /dev/loop<integer> \
          <file>             
-    mount \                                                 # Filesystem
+    mount \                                                     # Filesystem
         -o loop,offset=$((<sector> * <bytes_per_sector>)) \ 
          <file> \
         <mount_directory>    
 
 # Partitions
 
-    cat /proc/partitions                        # View partitions recognized by kernel
+    cat /proc/partitions                                        # View partitions recognized by kernel
 
-    mkfs.<filesystem_type> <block_device>       # New filesystem on block device
-    mkfs -t <filesystem_type> <block_device>    # New filesystem on block device
+    mkfs.<filesystem_type> <block_device>                       # New filesystem on block device
+    mkfs -t <filesystem_type> <block_device>                    # New filesystem on block device
 
-    mkswap <block_device>                       # New swap volume
+    mkswap <block_device>                                       # New swap volume
 
 # fstab
 
@@ -75,9 +75,9 @@
 
 # LUKS
     
-    cryptsetup luksFormat <file/block_device>       # Encrypt file (uses loopback) or block device 
-    cryptsetup luksOpen <file/block_device> <name>  # Decrypt as /dev/mapper/<name>
-    cryptsetup luksClose <decrypted name>           # Unmap decrypted volume
+    cryptsetup luksFormat <file/block_device>                   # Encrypt file (uses loopback) or block device 
+    cryptsetup luksOpen <file/block_device> <name>              # Decrypt as /dev/mapper/<name>
+    cryptsetup luksClose <decrypted_name>                       # Unmap decrypted volume
 
 # LVM
 
