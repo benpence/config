@@ -23,8 +23,8 @@
     ;   git fix -a              # Add all changes in working copy to top commit
     fix = commit --amend -C HEAD
 
-    ; Less the diff
-    diffless = log -p
+[push]
+    default         = matching
 
 [core]
 	excludesfile = <<<<HOME BASE>>>>/ben/.gitignore
