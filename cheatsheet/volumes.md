@@ -41,8 +41,37 @@
 
 # RAID
 
-    # TODO
-    mdadm
+    # Erase superblock of device before use
+    mdadm --zero-superblock /dev/<device>                       # Erase superblock
+    sfdisk -d /dev/<source> | sfdisk /dev/<dest>                # Copy superblock from source to dest
+
+    # Create new raid array /dev/<raid> of raid <type> using devices
+    mdadm -C /dev/<raid>    \
+        -l <type>           \                                   # raid level (0 1 4 5 6 10)
+        -n <active>         \                                   # active devices in array
+        -x <extra>          \                                   # extra (spare) devices in array
+        /dev/<device>                                           # raid devices: space separated list of /dev devices
+                                                                # use 'missing' as needed to create degraded array
+    # Run, stop, remove array
+    mdadm -R /dev/<raid>                                        # Run array
+    mdadm -S /dev/<raid>                                        # Stop running array
+    mdadm -r /dev/<raid>                                        # Remove stopped array
+
+    # Scan details of arrays and add to config
+    mdadm -D -s >> /etc/mdadm.conf                              # redhat
+    mdadm -D -s >> /etc/mdadm/mdadm.conf                        # debian
+
+    # Details on raid
+    mdadm -D /dev/<raid>
+
+    # Adding a device to the raid
+    mdadm -a /dev/<raid> /dev/<device>
+
+    # Removing a device from the raid array
+    mdadm -f /dev/<raid> /dev/<device>                          # Fail a device manually in the array
+    mdadm -r /dev/<raid> /dev/<device>                          # Remove a failed device from the array
+
+    mdadm /dev/<raid> -f /dev/<device> -r /dev/<device>         # Manually fail and remove a device from array
 
 # LUKS
     
