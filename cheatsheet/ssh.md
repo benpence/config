@@ -33,6 +33,13 @@
     # Example: Route incoming ssh requests for this key to internal_peer (assuming established keys with internal_peer)
     command="ssh user@internal_peer" ssh-rsa blahblahblahblahblah...
 
+# ~/.ssh/known_hosts commands
+
+    ssh-keygen -H -F <hostname>         # Simple search for fingerprints by hostname
+    ssh-keyscan -t rsa,dsa <hostname>   # More thorough search
+
+    ssh-keygen -R <hostname>            # Remove entry
+
 # stdin
 
     # Piping the microphone from one machine to the speakers of another
