@@ -2,7 +2,6 @@
 	name            = Ben Pence
 	email           = github@benpence.com
 
-
 [color]
 	branch          = auto
 	diff            = auto
@@ -26,4 +25,4 @@
     default         = matching
 
 [core]
-	excludesfile    = <<<<HOME BASE>>>>/ben/.gitignore
+	excludesfile    = ~/.gitignore

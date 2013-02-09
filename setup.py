@@ -81,13 +81,13 @@ def deploy(modules, current_os):
             make_substitutions(module_name, module, current_os)
 
 def usage():
-    print "Usage: %s {osx|ubuntu|fedora}" % sys.argv[0]
+    print "Usage: %s {osx|linux}" % sys.argv[0]
     exit(1)
         
 def main():
     if len(sys.argv) != 2:
         usage()
-    if sys.argv[1] not in ('osx', 'ubuntu', 'fedora'):
+    if sys.argv[1] not in ('osx', 'linux'):
         usage()
 
     deploy(

@@ -1,0 +1,2 @@
+alias 'mkdir=mkdir -p'  # Make directories as needed
+alias 'ls=ls <<<<COLOR>>>>'        # ls color output

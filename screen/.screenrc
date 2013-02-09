@@ -7,7 +7,7 @@ startup_message on
 vbell off
 
 # Copy mode
-<<<<RENDITION>>>> # bold white text, magenta highlight
+sorendition 04 Kd # bold white text, magenta highlight
 defscrollback 10000 # Copy mode scrollback history
 
 # Screen stops sending characters to terminals not accepting
@@ -20,7 +20,7 @@ altscreen on
 select 1
 
 # Stores hardcopies
-hardcopydir ~/.screen
+hardcopydir $HOME/.screen
 
 ### Split screens ###
 # Caption
@@ -29,7 +29,7 @@ caption splitonly "%?%F%{wd}%:%{Kd}%? %="
 # Move keys
 bind k focus up
 bind j focus down
-<<<<FOCUS>>>>
+
 
 # Resize keys
 bind = resize =
@@ -44,7 +44,7 @@ backtick    2   0           0               pwd
 
 # hardstatus format is [user@host:pwd][ screen1 screen2 ][day.month.year hour:minute]
 hardstatus alwayslastline
-hardstatus string "%{-b kd}%{w}[%{+b <<<<USER COLOR>>>>}%1`%{-b w}@%{+b <<<<HOST COLOR>>>>}%H%{-b w}:%{+b <<<<PATH COLOR>>>>}%2`%{-b w}][ %=%{w}%?%-w%?(%{+b W}%n %t %f%{-b})%?%+w%?%= ][%{+b <<<<DATE COLOR>>>>}%d.%m.%Y %{+b <<<<TIME COLOR>>>>}%0c%{-b w}]" 
+hardstatus string "%{-b kd}%{w}[%{+b R}%1`%{-b w}@%{+b Y}%H%{-b w}:%{+b G}%2`%{-b w}][ %=%{w}%?%-w%?(%{+b W}%n %t %f%{-b})%?%+w%?%= ][%{+b B}%d.%m.%Y %{+b Y}%0c%{-b w}]" 
 
 # % ESCAPE STRINGS (from man page)
 # a      either 'am' or 'pm'
