@@ -10,14 +10,22 @@
     # Use parition embedded in file as block device or filesystem
     fdisk                                                       # View bytes per sector and partition starting sector
 
-    losetup \                                                   # Block device
-        -o $((<sector> * <bytes_per_sector>)) \
-        /dev/loop<integer> \
+    losetup                                                 \   # Block device
+        -o $((<sector> * <bytes_per_sector>))               \
+        /dev/loop<integer>                                  \
          <file>             
-    mount \                                                     # Filesystem
-        -o loop,offset=$((<sector> * <bytes_per_sector>)) \ 
-         <file> \
-        <mount_directory>    
+    mount                                                   \   # Filesystem
+        -o loop,offset=$((<sector> * <bytes_per_sector>))   \ 
+         <file>                                             \
+        <mount_directory>
+
+    # Create iso file from directory
+    mkisofs                                                 \
+        -V <name>                                           \   # Name of disk
+        -udf -J -Rr -r                                      \   # Include data necessary for various formats
+        -allow-multidot -allow-leading-dots                 \
+        -input-charset default                              \   # Character set for filenames
+        -o <iso_file> <directory>
 
 # Partitions
 
