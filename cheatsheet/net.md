@@ -5,6 +5,10 @@
     ip link set up <interface>      # put interace up
     ip link set down <interface>    # put interface down
 
+    ifconfig                        # show interfaces
+    ifconfig <interface> up         # put interace up
+    ifconfig <interface> down       # put interface down
+
 ## Persistent
 
     # debian /etc/network/interfaces
@@ -17,11 +21,14 @@
 # Addresses
 ## Non-Persistent
 
-    # Note: Addresses in CIDR notation (ex. 192.168.1.5/24)
+    # Note: Addresses for ip command in CIDR notation (ex. 192.168.1.5/24)
     # Note: Interfaces can have multiple (unique) addresses
-    ip addr                                     # show interface addresses
-    ip addr addr add <address> dev <interface>  # add address to interface
-    ip addr addr del <address> dev <interface>  # delete address from interface
+    ip addr                                             # show interface addresses
+    ip addr addr add <address> dev <interface>          # add address to interface
+    ip addr addr del <address> dev <interface>          # delete address from interface
+
+    ifconfig                                            # show interface addresses
+    ifconfig <interface> <address> netmask <netmask>    # add address to interface
 
 ## Persistent
 
@@ -40,15 +47,34 @@
     BOOTPROTO=<none/dhcp/bootp> # dynamic protocol for getting address
     USERCTL=<yes/no>            # can non-root users control interface
 
+# ARP
+
+    ip neigh                                                    # Show ARP entries
+    ip neigh add <address> lladdr <mac_address> dev <interface> # Add ARP entry
+    ip neigh del <address> dev <interface>                      # Delete ARP entry
+    ip link set dev <interface> arp off                         # Disable ARP on interface
+
+    arp                                                         # Show ARP entries
+    arp -s <address> <mac_address> -i <interface>               # Add ARP entry
+    arp -d <address>                                            # Delete ARP entry
+    ifconfig -arp <interface>                                   # Disable ARP on interface
+                                                                
 # Routes
 ## Non-Persisent
 
+    netstat -rn                                                 # show kernel routing table
+
     # Note: Addresses in CIDR notation (ex. 192.168.1.5/24)
-    ip route                                        # show routes
-    netstat -rn                                     # show kernel routing table
-    ip route add <address/network> dev <interface>  # route traffic to address/network through interface
-    ip route add default via <address>              # forward traffic matching no routes to address
-    ip route del <address/network>                  # delete route
+    ip route                                                    # show routes
+    ip route add <address/network> dev <interface>              # route traffic to address/network through interface
+    ip route add default via <address>                          # forward traffic matching no routes to address
+    ip route del <address/network>                              # delete route
+
+    route                                                       # show routes
+    route add -host <address> netmask <netmask> dev <interface> # route traffic to address through interface
+    route add -net  <address> netmask <netmask> dev <interface> # route traffic to network through interface
+    route add default gw <address>                              # forward traffic matching no routes to address
+    route del <route>                                           # delete route (exactly as added above)
 
 ## Persistent
 
