@@ -93,3 +93,47 @@
 
     # Messages of <UNIT>, where <UNIT> is one from `systemctl list-unit-files`
     journalctl -u <UNIT>
+
+# upstart
+## /etc/init/<service>.conf example
+
+    description "service description"
+    author "service author"
+
+    # Start and Stop service on events
+    start on startup            # Before networking, '/' mounted read-only
+    stop on <service>           # After <service> is started
+    start on stopped <service>  # After <service> is stopped
+    start on runlevel [2345]    # When init changes run levels
+    stop on runlevel [!2345]    # When init changes to OTHER run levels
+
+    pre-start script            # Setup before starting service
+        # ...
+    end script
+
+    post-start script           # Setup after starting service
+        # ...
+    end script
+
+    respawn                     # Respawn on unexpected death
+    exec <binary_path>          # Run the service
+
+    console <output>            # process output
+                                #   output: stdout
+                                #   logged: redirect to logger (the default setting)
+                                #   owner:  /dev/console
+                                #   none:   /dev/null
+
+    pre-stop script             # Tear down before stopping service
+        # ...                   
+    end script
+
+    post-stop script            # Tear down after stopping service
+        # ...
+    end script
+
+    # Note: "exec <binary_path>"
+    #       is equivalent to
+    #       "script
+    #           exec <binary_path>
+    #       end script"
