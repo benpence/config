@@ -13,6 +13,7 @@ set backspace=indent,eol,start      " allows backspacing over autoindent, line b
 
 """ Syntax
 syntax on                           " automatic syntax highlighting
+colorscheme oak                     " syntax highlighting colors
 au BufRead,BufNewFile *.json set filetype=javascript " Javascript
 
 """ Save environment on quit

@@ -30,6 +30,8 @@
         ],
         "files" : [
             ".vimrc",
+            
+            ".vim/colors/oak.vim",
 
             ".vim/after/syntax/haml.vim",
             ".vim/after/syntax/html.vim",
