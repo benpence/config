@@ -1,7 +1,7 @@
 ### screen auto-title/shelltitle functions ###
 # if using GNU screen, let the zsh tell screen what the title and hardstatus
 # of the tab window should be.
-if [[ $TERM == "screen" ]]; then
+if [[ $TERM == screen* ]]; then
   _GET_PATH='echo $PWD | sed "s/^\/Users\//~/;s/^~$USER/~/"'
 
   # use the current user as the prefix of the current tab title (since that's
