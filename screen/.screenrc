@@ -1,7 +1,7 @@
-# No longer needed with .zshrc methods
-#shelltitle '$ |-'
+startup_message off
 
-startup_message on
+# Colors vim, etc.
+term    screen-256color
 
 # Disable visual bell
 vbell off
@@ -16,20 +16,12 @@ nonblock on
 # Support for virtual terminals
 altscreen on
 
-# Selecting
-select 1
-
 # Stores hardcopies
 hardcopydir $HOME/.screen
 
 ### Split screens ###
 # Caption
 caption splitonly "%?%F%{wd}%:%{Kd}%? %="
-
-# Move keys
-bind k focus up
-bind j focus down
-
 
 # Resize keys
 bind = resize =
