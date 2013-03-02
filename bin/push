@@ -1,0 +1,20 @@
+#!/bin/sh
+# push is a very simple stack-in-a-string that holds paths (keeps backslashes in paths)
+stack=~/.stack
+dir=`pwd`
+
+if [ -z "$1" ]; then
+    new="$dir"
+else 
+    for p in "$@"; do
+        p="$(sed 's/ /\\ /g' <<< $p)"
+
+        if [[ "$p" == /* ]]; then
+            new="$p $new"
+        else
+            new="$dir/$p $new"
+        fi;
+    done;
+fi;
+
+echo "$new\n`cat $stack 2> /dev/null`" > $stack

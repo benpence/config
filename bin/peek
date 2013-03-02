@@ -1,0 +1,3 @@
+#!/bin/sh
+stack=~/.stack
+cat $stack 2> /dev/null
