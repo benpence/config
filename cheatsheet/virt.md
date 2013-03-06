@@ -141,8 +141,19 @@
     virsh resume    <domain>
 
     # Hibernate (RAM saved to disk) 
-    virsh save      <domain>
+    virsh save      <domain> <state_file>
     virsh restore   <domain>
+
+    # Snapshot
+    virsh snapshot-create-as    <domain> <name> <descript>  # Create named snapshot
+    virsh snapshot-delete       <domain> <name>             # Delete named snapshot
+    virsh snapshot-revert       <domain> <name>             # Revert domain to named snapshot
+
+    virsh snapshot-current      <domain> --name             # Name of most recent snapshot
+    virsh snapshot-list         <domain>                    # Names of all snapshots
+
+    virsh snapshot-dumpxml      <domain> <name>             # Print snapshot xml
+    virsh snapshot-edit         <domain> <name>             # Edit snapshot xml
 
     # Power operations
     virsh shutdown  <domain>        # Send shutdown signal to guest
@@ -157,15 +168,17 @@
     virsh setmaxmem <domain> <kilobytes>
 
     # Host virtual networking
-    virsh net-list                  # List available virtual networks
-    virsh net-dumpxml   <name>	    # Dump xml of virtual network
+    virsh net-list                          # List available virtual networks
+    virsh net-dumpxml   <name>              # Dump xml of virtual network
 
-    virsh net-define    <xml_file>	# Create new virtual network
-    virsh net-start     <name>		# Start virtual network
-    virsh net-create    <xml_file>	# Create and start new virtual network
+    virsh net-define    <xml_file>          # Create new virtual network
+    virsh net-start     <name>              # Start virtual network
+    virsh net-create    <xml_file>          # Create and start new virtual network
 
-    virsh net-destroy   <name>	    # Stop virtual network
-    virsh net-undefine  <name>      # Delete virtual network xml entry
+    virsh net-destroy   <name>              # Stop virtual network
+    virsh net-autostart <name> --disable    # Disable a network from starting with libvirt
+    virsh net-undefine  <name>              # Delete virtual network xml entry
+
 
 ## Example XML
 
