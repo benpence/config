@@ -58,7 +58,7 @@
     arp -s <address> <mac_address> -i <interface>               # Add ARP entry
     arp -d <address>                                            # Delete ARP entry
     ifconfig -arp <interface>                                   # Disable ARP on interface
-                                                                
+
 # Routes
 ## Non-Persisent
 
@@ -86,8 +86,8 @@
         down <command>  # Use above commands for deleting route on interface down
 
     # redhat /etc/sysconfig/network-scripts/route-<interface>
-    GATEWAY0=<address>        
-    NETMASK0=<netmask>        
+    GATEWAY0=<address>
+    NETMASK0=<netmask>
     ADDRESS0=<address/network>
 
     GATEWAY1=<address>
@@ -317,7 +317,7 @@
 ## Non-Persistent
 
     # Change ephemeral (dynamic) port range
-    sysctl net.ipv4.ip_local_port_range = "<low_port> <high_port>"  
+    sysctl net.ipv4.ip_local_port_range = "<low_port> <high_port>"
 
     # Forward traffic not meant for this host
     systemctl net.ipv4.ip_forward = 1
