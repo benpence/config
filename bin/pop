@@ -1,4 +1,4 @@
 #!/bin/sh
 stack=~/.stack
 cat $stack 2> /dev/null | awk 'BEGIN {ORS=" "}; 1'
-printf "" > $stack
+rm $stack  2> /dev/null
