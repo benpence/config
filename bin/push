@@ -17,8 +17,4 @@ else
     done;
 fi;
 
-if [ -e $stack ]; then
-    new="$new\n`cat $stack 2> /dev/null`"
-fi;
-
-echo -e $new > $stack
+echo -n " $new" >> $stack
