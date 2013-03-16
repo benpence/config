@@ -278,11 +278,11 @@
     # debian /etc/network/interfaces
     auto eth0
     iface eth0 inet dhcp
-        post-up      iptables-restore < /etc/iptables.rules
+        post-up     iptables-restore < /etc/iptables.rules
         post-down   iptables-restore < /etc/iptables.downrules
 
     # redhat
-    iptables save
+    service iptables save
 
 # Bridges
 ## Non-Persistent
