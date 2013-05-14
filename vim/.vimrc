@@ -110,3 +110,9 @@ function! g:ToggleNumberMode()
     endif 
 endfunc 
 nnoremap <leader>n :call g:ToggleNumberMode()<cr>
+
+" For swp files, opens up original file and diffs them
+function! g:SwapDiff()
+    vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+endfunc
+nnoremap <leader>r :call g:SwapDiff()<cr>
