@@ -320,7 +320,7 @@
     sysctl net.ipv4.ip_local_port_range = "<low_port> <high_port>"
 
     # Forward traffic not meant for this host
-    systemctl net.ipv4.ip_forward = 1
+    sysctl net.ipv4.ip_forward = 1
 
     # Prevent bridged traffic from going through iptables
     sysctl net.bridge.bridge-nf-call-arptables = 0
@@ -329,4 +329,4 @@
 
 ## Persistent
 
-    # Strip off 'systemctl' from the command(s) above and put in /etc/sysctl.conf
+    # Strip off 'sysctl' from the command(s) above and put in /etc/sysctl.conf
