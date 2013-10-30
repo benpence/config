@@ -29,6 +29,11 @@ bind + resize +1
 bind - resize -1
 bind _ resize max
 
+# Disable flow control
+defflow off
+bind s
+bind ^s
+
 ### Hardstatus ###
 # commands
 backtick    1   0           0               whoami
