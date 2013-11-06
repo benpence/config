@@ -45,13 +45,14 @@ xkb_symbols "dvp" {
     key <AD08> { [ c,               C,              ccedilla,        Ccedilla   ] };
     key <AD09> { [ r,               R,              registered,      trademark  ] };
     key <AD11> { [ slash,           question,       questiondown                ] };
-    key <AD12> { [ at,              asciicircum,    dead_circumflex, dead_caron ] };
+    key <AD12> { [ at,              asciicircum                                 ] };
 
     // home row, left side
     key <AC01> { [ a,               A,              aring,           Aring      ] };
     key <AC02> { [ o,               O,              oslash,          Ooblique   ] };
-    key <AC03> { [ e,               E,              ae,              AE         ] };
-    key <AC04> { [ u,               U,              eacute,          Eacute     ] };
+    key <AC03> { [ e,               E,              eacute,          Eacute     ] };
+    key <AC04> { [ u,               U,              dead_circumflex, dead_caron ] };
+    key <AC05> { [ i,               I,              ae,              AE         ] };
 
     // home row, right side
     key <AC06> { [ d,               D,              eth,             ETH        ] };
