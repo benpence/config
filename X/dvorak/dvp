@@ -42,6 +42,8 @@ xkb_symbols "dvp" {
     key <AD05> { [ y,               Y                                           ] };
 
     // upper row, right side
+    key <AD06> { [ f,               F                                           ] };
+    key <AD07> { [ g,               G                                           ] };
     key <AD08> { [ c,               C,              ccedilla,        Ccedilla   ] };
     key <AD09> { [ r,               R,              registered,      trademark  ] };
     key <AD11> { [ slash,           question,       questiondown                ] };
@@ -52,6 +54,7 @@ xkb_symbols "dvp" {
     key <AC02> { [ o,               O,              oslash,          Ooblique   ] };
     key <AC03> { [ e,               E,              oe,              OE         ] };
     key <AC04> { [ u,               U,              udiaeresis,      Udiaeresis ] };
+    key <AC05> { [ i,               I                                           ] };
 
     // home row, right side
     key <AC06> { [ d,               D,              eth,             ETH        ] };
