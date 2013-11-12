@@ -6,6 +6,21 @@
 // Main features: Numbers are in shift position (like French), symbols have been
 // placed in locations that give good hand-alternation and finger rolling with
 // symbols that usually follows, accented characters are possible for I18N.
+//
+// +----+----+----+----+----+----+----+----+----+----+----+----+----+------+
+// | ~ẽ |    | ¤  | ¢  | ¥  | €  | £  |    | ½  |    |    | ¡  | è  |      |
+// | $~ | 1& | 2[ | 3{ | 4} | 5( | 6= | 7* | 8) | 9+ | 0] | !% | #` | BACK |
+// +----+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+----+
+// |      | æÆ | «  | »  | ¶§ |    |    |    | çÇ | ®™ |    | ¿  | ê  |    |
+// | TAB  | ;: | ,< | .> | pP | yY | fF | gG | cC | rR | lL | /? | @^ | \| |
+// +------+----+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+    |
+// |        | åÅ | øØ | œŒ | üÜ |    | ðÐ |    | þÞ | ñÑ | ßẞ | ­  |       |
+// | CAPS   | aA | oO | eE | uU | iI | dD | hH | tT | nN | sS | -_ | ENTER |
+// +--------+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-------+
+// |          | éë |    |    |    |    |    |    |    |    |    |          |
+// | SHIFT    | '" | qQ | jJ | kK | xX | bB | mM | wW | vV | zZ |    SHIFT |
+// +----------+----+----+----+----+----+----+----+----+----+----+----------+
+//
 partial alphanumeric_keys
 xkb_symbols "dvp" {
     include "us(dvorak)"
