@@ -10,12 +10,9 @@
     ui              = auto
 
 [alias]
-    ; All commits, one line
-    commits         = log --graph --decorate --pretty=oneline --abbrev-commit --all
-
-    ; One line commits with committer
-    blames          = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
+    ; All commits in tree
+    hist            = log --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%cd%Creset%C(red)%d%Creset %s %C(magenta)%an%Creset' --date=short
+    
     ; git fix                 # Open message file for writing
     ; git fix FILE1 FILE2     # Add changes to FILE1 and FILE2 to top commit
     ; git fix -a              # Add all changes in working copy to top commit
@@ -26,3 +23,6 @@
 
 [core]
 	excludesfile    = ~/.gitignore
+
+[merge]
+    tool            = vimdiff
