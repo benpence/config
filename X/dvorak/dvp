@@ -14,7 +14,7 @@
 // |      | æÆ | «  | »  | ¶§ |    |    |    | çÇ | ®™ |    | ¿  | ê  |    |
 // | TAB  | ;: | ,< | .> | pP | yY | fF | gG | cC | rR | lL | /? | @^ | \| |
 // +------+----+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+    |
-// |        | åÅ | øØ | œŒ | üÜ |    | ðÐ |    | þÞ | ñÑ | ß  | ­  |       |
+// |        | å  | øØ | œŒ | ŭµ |    | ðÐ |    | þÞ | ñÑ | ß  | ­  |       |
 // | CAPS   | aA | oO | eE | uU | iI | dD | hH | tT | nN | sS | -_ | ENTER |
 // +--------+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-------+
 // |          | éë |    |    |    |    |    |    |    |    |    |          |
@@ -65,10 +65,10 @@ xkb_symbols "dvp" {
     key <AD12> { [ at,              asciicircum,    dead_circumflex, dead_caron ] };
 
     // home row, left side
-    key <AC01> { [ a,               A,              aring,           Aring      ] };
+    key <AC01> { [ a,               A,              dead_abovering              ] };
     key <AC02> { [ o,               O,              oslash,          Ooblique   ] };
     key <AC03> { [ e,               E,              oe,              OE         ] };
-    key <AC04> { [ u,               U,              udiaeresis,      Udiaeresis ] };
+    key <AC04> { [ u,               U,              dead_breve,      mu         ] };
     key <AC05> { [ i,               I                                           ] };
 
     // home row, right side
