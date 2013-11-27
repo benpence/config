@@ -28,6 +28,8 @@ then
     export USE_EDITOR=$EDITOR
     export VISUAL=$EDITOR
 fi
+
+set -o vi               # Use vi bindings
 # bindkey -e            # Use emacs zsh bindings instead of vi
 
 ### MISC ###
