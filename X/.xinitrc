@@ -5,7 +5,7 @@ xsetroot -cursor_name left_ptr
 syndaemon -t -k -i 1 -d &
 
 # Screensaver daemon
-xscreensaver -no-splash &
+[[ "" == `pgrep -x xscreensaver` ]] && xscreensaver -no-splash &
 
 # Launch urxvt if it's not running yet
 [[ "" == `pgrep -x urxvt` ]] && urxvt &
