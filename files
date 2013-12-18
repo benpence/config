@@ -1,5 +1,6 @@
 # fonts
 .fonts/ProggySquareSZ.ttf
+.fonts/Inconsolata.otf
 
 # screen
 .screenrc
