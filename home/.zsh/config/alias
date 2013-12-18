@@ -1,3 +1,3 @@
 alias 'mkdir=mkdir -p'  # Make directories as needed
-alias 'l=ls <<<<COLOR>>>>'        # ls color output
+alias 'l=ls --color'    # ls color output
 alias 'less=less -R'    # less displays color
