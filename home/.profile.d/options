@@ -1,0 +1,8 @@
+### editor = vim ###
+if [[ -x $(which vim) ]];
+then
+    export EDITOR="vim"
+    export USE_EDITOR=$EDITOR
+    export VISUAL=$EDITOR
+fi
+set -o vi

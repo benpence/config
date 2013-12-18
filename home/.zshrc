@@ -1,8 +1,9 @@
 [[ -z "$PS1" ]] && return
 
-### Interactive shells ###
+# all shells
+. ~/.profile
+
+# zsh shell
 . ~/.zsh/config/options
 . ~/.zsh/config/prompt
 . ~/.zsh/config/screen
-. ~/.zsh/config/env
-. ~/.zsh/config/alias

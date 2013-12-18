@@ -21,17 +21,6 @@ compctl -g '*.gz' + -g '*(-/)' gunzip gzcat                             # extrac
 compctl -g '*(-/) .*(-/)' cd                                            # cd only to directories
 #compctl -g '(^(*.o|*.class|*.jar|*.gz|*.gif|*.a|*.Z))' more less vim    # don't read binary files
 
-### editor = vim ###
-if [[ -x $(which vim) ]];
-then
-    export EDITOR="vim"
-    export USE_EDITOR=$EDITOR
-    export VISUAL=$EDITOR
-fi
-
-set -o vi               # Use vi bindings
-# bindkey -e            # Use emacs zsh bindings instead of vi
-
 ### MISC ###
 export REPORTTIME=30    # Time long commands
 setopt AUTO_CONTINUE    # Persist background tasks on exit

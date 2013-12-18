@@ -1,0 +1,15 @@
+# Aliases
+alias 'mkdir=mkdir -p'  # Make directories as needed
+alias 'l=ls --color'    # ls color output
+alias 'less=less -R'    # less displays color
+alias 'o=xdg-open'      
+
+# Custom wifi retryfor systemd+netctl
+wifi(){
+    while [ "0" != `sudo ip link set down wlan0 && sudo netctl restart $@; echo $?` ]; do
+        echo Trying...;
+        sudo journalctl -xn --no-pager
+    done;
+
+    echo "Connected."
+}
