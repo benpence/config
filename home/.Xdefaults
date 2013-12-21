@@ -1,0 +1,10 @@
+# Colors
+*foreground:                White
+*background:                Black
+
+# Font
+*font:                      xft:Inconsolata:style=Medium:pixelsize=14
+*boldFont:                  xft:Inconsolata:style=Medium:pixelsize=14
+
+# Scrollbar
+*scrollBar:                 false
