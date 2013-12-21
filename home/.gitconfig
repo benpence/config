@@ -1,12 +1,12 @@
 [user]
-	name            = Ben Pence
-	email           = github@benpence.com
+    name            = Ben Pence
+    email           = github@benpence.com
 
 [color]
-	branch          = auto
-	diff            = auto
-	interactive     = auto
-	status          = auto
+    branch          = auto
+    diff            = auto
+    interactive     = auto
+    status          = auto
     ui              = auto
 
 [alias]
@@ -23,7 +23,7 @@
     default         = matching
 
 [core]
-	excludesfile    = ~/.gitignore
+    excludesfile    = ~/.gitignore
 
 [merge]
     tool            = vimdiff
