@@ -11,8 +11,8 @@
 
 [alias]
     ; All commits in tree
-    hist            = log --all --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%cd%Creset%C(red)%d%Creset %s %C(magenta)%an%Creset'   --date=short
-    history         = log --all --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%cd%Creset%C(red)%d%Creset %s %C(magenta)%an%Creset%n' --date=short --stat
+    hist            = log --all --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%cd%Creset%C(red)%d%Creset %s %C(magenta)%an <%ae>%Creset'     --date=short
+    history         = log --all --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%cd%Creset%C(red)%d%Creset %s %C(magenta)%an <%ae>%Creset%n%b' --date=iso --stat
     
     ; git fix                 # Open message file for writing
     ; git fix FILE1 FILE2     # Add changes to FILE1 and FILE2 to top commit
