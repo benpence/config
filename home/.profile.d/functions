@@ -4,12 +4,43 @@ alias 'l=ls --color'    # ls color output
 alias 'less=less -R'    # less displays color
 alias 'o=xdg-open'      
 
-# Custom wifi retryfor systemd+netctl
+# Custom functions
 wifi(){
-    while [ "0" != `sudo ip link set down wlan0 && sudo netctl restart $@; echo $?` ]; do
+    while [ "0" != `sudo ip link set down wlan0 && sudo netctl restart "$@"; echo $?` ]; do
         echo Trying...;
         sudo journalctl -xn --no-pager
     done;
 
     echo "Connected."
+}
+
+# Open chromium with semi-permanent incognito mode.
+#   Good if you need to do something in a new browsing environment and may want
+#     to keep session data
+#   Example use: P=127.0.0.1:9999; polychromium --proxy-server="http=$P;https=$P"
+polychromium(){
+    d=$( mktemp -d )
+    chromium --user-data-dir=$d $@;
+
+    dialog --yesno "Discard Chromium data?" 6 26
+    if [[ "$?" == "0" ]]; then
+        rm -rf $d;
+    else
+        echo $d;
+    fi
+}
+
+# Ensure destination directory (or destination containing-directory) exists before copy
+#   Example use: find dir/ -type f -mtime -30 | while read f; do mkcp $f monthly_backup/$f; done;
+mkcp(){
+    # Destination is directory -> Create directory
+    if [[ "${@: -1}" =~ "/$" ]]; then
+        mkdir -p "${@: -1}"
+
+    # Destination is filename -> Create containing directory
+    else
+        mkdir -p $( dirname "${@: -1}" )
+    fi;
+    
+    cp $@
 }
