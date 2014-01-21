@@ -5,7 +5,8 @@ set visualbell t_vb=""              " disable visual bell
 set cursorline                      " highlights current line
 set ttyfast                         " for fast connections/local. improves redrawing
 set scrolloff=3                     " buffer between cursor line and top/bottom
-set relativenumber                  " show relative line numbers fro cursor line
+set relativenumber                  " show relative line numbers for cursor line
+set number                          " (& relativenumber) shows absolute line number for current line
 set timeoutlen=400                  " max milliseconds between waiting on keys in a :mapping sequence
 set autochdir                       " automatically change directories when opening buffer
 set autoindent                      " new line matches current line's indent
@@ -99,14 +100,14 @@ map <C-H> gT
 " ctrl-l tab right
 map <C-L> gt                        
 
-" Toggle between relative numbering, absolute numbering, and no numbering
+" Toggle between relative numbering (with absolute number for current line) and no numbering
 function! g:ToggleNumberMode() 
-    if(&rnu == 1) 
-        set nu 
-    elseif(&nu == 1)
+    if(&relativenumber == 1)
+        set norelativenumber
         set nonumber
     else
-        set rnu 
+        set relativenumber
+        set number
     endif 
 endfunc 
 nnoremap <leader>n :call g:ToggleNumberMode()<cr>
