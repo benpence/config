@@ -41,6 +41,10 @@ main = do
               -- Dmenu app launcher with added font
             , ((modifier, xK_p),                spawn "dmenu_run -fn xft:Inconsolata:style=Medium:pixelsize=14")
 
+              -- Adjust backlight
+            , ((0, xK_F6),                      spawn "xbacklight -10")
+            , ((0, xK_F7),                      spawn "xbacklight +10")
+
               -- Volume mute, down, up for F8 F9 F10
             , ((0, xK_F8),                      spawn "amixer sset Master,0 toggle")
             , ((0, xK_F9),                      spawn "amixer sset Master,0 3-")
