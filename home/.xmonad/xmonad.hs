@@ -1,14 +1,20 @@
+import System.IO
+
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
-import System.IO
+
+myManageHook = composeAll
+    [ className =? "Gimp"     --> doShift "3"
+    , className =? "Inkscape" --> doShift "3"
+    , manageDocks ]
+
+-- Modifier is Alt
+modifier = mod1Mask
 
 main = do
-    -- Run xmobar
---  xmproc <- spawnPipe "xmobar"
-
     -- Run WM-independent startup commands
     spawn "~/.xinitrc"
 
@@ -16,14 +22,11 @@ main = do
         -- Terminal to launch on Mod-Shift-Enter
         { terminal           = "urxvt"
 
-        , layoutHook        = avoidStruts  $  layoutHook defaultConfig
-        , manageHook        = manageDocks <+> manageHook defaultConfig
+        , workspaces         = ["1", "2", "3"]
+        , modMask            = modifier
 
-        -- Insert xmobar
---      , logHook           = dynamicLogWithPP xmobarPP
---          { ppOutput      = hPutStrLn xmproc
---          , ppTitle       = xmobarColor "green" "" . shorten 50
---          }
+        , layoutHook         = avoidStruts   $  layoutHook defaultConfig
+        , manageHook         = myManageHook <+> manageHook defaultConfig
         
         -- Window borders
         , borderWidth        = 1
