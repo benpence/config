@@ -35,11 +35,11 @@ main = do
 
         -- Hotkeys
         } `additionalKeys`
-            -- 
-            [ ((mod1Mask .|. shiftMask, xK_l),  spawn "xscreensaver-command -lock")
+              -- Lock screensaver button
+            [ ((modifier .|. shiftMask, xK_l),  spawn "xscreensaver-command -lock")
 
-              -- Add font to dmenu invocation
-            , ((mod1Mask, xK_p),                spawn "dmenu_run -fn xft:Inconsolata:style=Medium:pixelsize=14")
+              -- Dmenu app launcher with added font
+            , ((modifier, xK_p),                spawn "dmenu_run -fn xft:Inconsolata:style=Medium:pixelsize=14")
 
               -- Volume mute, down, up for F8 F9 F10
             , ((0, xK_F8),                      spawn "amixer sset Master,0 toggle")
