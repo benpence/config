@@ -61,8 +61,10 @@ set tabstop=4                       " number of spaces for existing tabs
 set shiftwidth=4                    " number of spaces for each step of (auto)indent (< or >)
 set softtabstop=4                   " insert mode tab length 
 set expandtab                       " insert spaces instead of tabs
-set cindent                         " 
-set smartindent                     " 
+set smartindent                     " indents after newline in new code block
+set cindent                         " Unindents on bracket/brace closing (among other things)
+set cinkeys=0{,0},0),:,!^F,o,O,e    " restricts which characters trigger cindent
+                                    " (specifically removes '#' key undindenting line)
 
 " Special tabbing for specific files
 autocmd FileType scala setlocal shiftwidth=2 tabstop=2 softtabstop=2
