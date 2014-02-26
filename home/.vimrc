@@ -16,6 +16,7 @@ set backspace=indent,eol,start      " allows backspacing over autoindent, line b
 syntax on                           " automatic syntax highlighting
 colorscheme oak                     " syntax highlighting colors
 au BufRead,BufNewFile *.json set filetype=javascript " Javascript
+au BufRead,BufNewFile *.org  set filetype=org        " Outline
 
 """ Save environment on quit
 " Backups before write
@@ -68,6 +69,7 @@ set cinkeys=0{,0},0),:,!^F,o,O,e    " restricts which characters trigger cindent
 
 " Special tabbing for specific files
 autocmd FileType scala setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType org   setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 """ Visual Mode 
 " Tab shifts keep selection

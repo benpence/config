@@ -33,6 +33,7 @@
 .vim/plugin/godoc.vim
 .vim/syntax/go.vim
 .vim/syntax/godoc.vim
+.vim/syntax/org.vim
 .vim/go_readme.txt
 
 # git
