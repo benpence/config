@@ -23,9 +23,6 @@ xkb_symbols "dvp" {
 
     name[Group1] = "USA - Dvorak Latin";
 
-    replace key <ESC> { [ Caps_Lock ] };
-    replace key <CAPS> { [ Escape ] };
-
     //             Unmodified       Shift           AltGr            Shift+AltGr
     // symbols row, left side
     key <TLDE> { [ grave,           asciitilde,     dead_grave,      dead_tilde ] };
