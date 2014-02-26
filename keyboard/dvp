@@ -8,7 +8,7 @@
 // | `~ | 1! | 2@ | 3# | 4$ | 5% | 6^ | 7& | 8* | 9( | 0) | [{ | ]} | BACK |
 // +----+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+----+
 // |      | '" | «  | »  | ¶§ |    |    |    | çÇ | ®™ | λ  | ¿  |    |    |
-// | TAB  | '" | ,< | .> | pP | yY | fF | gG | cC | rR | lL | /? | += | \| |
+// | TAB  | '" | ,< | .> | pP | yY | fF | gG | cC | rR | lL | /? | =+ | \| |
 // +------+----+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+    |
 // |        | °  | øØ | œŒ | ˘µ |    | ðÐ |    | þÞ | ñÑ | ß  |  ­ |       |
 // | CAPS   | aA | oO | eE | uU | iI | dD | hH | tT | nN | sS | -_ | ENTER |
@@ -59,7 +59,7 @@ xkb_symbols "dvp" {
     key <AD09> { [ r,               R,              registered,      trademark  ] };
     key <AD10> { [ l,               L,              Greek_lambda                ] };
     key <AD11> { [ slash,           question,       questiondown                ] };
-    key <AD12> { [ plus,            equal                                       ] };
+    key <AD12> { [ equal,           plus                                        ] };
 
     // home row, left side
     key <AC01> { [ a,               A,              dead_abovering              ] };
