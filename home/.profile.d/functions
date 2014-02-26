@@ -3,6 +3,8 @@ alias 'mkdir=mkdir -p'  # Make directories as needed
 alias 'l=ls --color'    # ls color output
 alias 'less=less -R'    # less displays color
 alias 'o=xdg-open'      
+alias 'emacs=emacs -nw' # Console emacs only
+alias 'vim=vim -p'      # Open multiple files in tabs
 
 # Custom functions
 wifi(){
