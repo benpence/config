@@ -64,6 +64,9 @@ set expandtab                       " insert spaces instead of tabs
 set cindent                         " 
 set smartindent                     " 
 
+" Special tabbing for specific files
+autocmd FileType scala setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 """ Visual Mode 
 " Tab shifts keep selection
 vnoremap < <gv
