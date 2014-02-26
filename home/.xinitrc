@@ -2,7 +2,7 @@
 xsetroot -cursor_name left_ptr
 
 # Synaptics daemon prevents touchpad for a moment after keyboard input
-syndaemon -t -k -i 1 -d &
+[[ "" == `pgrep -x syndaemon` ]] && syndaemon -t -k -i 1 -d &
 
 # Use modified dvorak keyboard layout with
 #   * hold alt-gr to use extra lanugage characters/symbols
