@@ -89,7 +89,6 @@ set lbr!                            " wrap long lines by certain characters, not
 set nowrap
 
 """ Font
-set gfn=ProggySquareTTSZ\ 12        " Display in terminal
 set guifont=ProggySquareTTSZ\:h16   " Display in GUI
 
 """ Window tabs
