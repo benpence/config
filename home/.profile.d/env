@@ -1,4 +1,10 @@
+### Default editor ###
+export EDITOR="vim"     
+export VISUAL=$EDITOR   
+
+### PATH ###
 #export PATH=":$PATH"
+export PATH="/home/ben/Source/.build/adt/sdk/platform-tools:$PATH"
 
 # ~/bin scripts
 if [ -d $HOME/bin ]; then
@@ -6,6 +12,12 @@ if [ -d $HOME/bin ]; then
 fi
 
 #export PYTHONPATH=":$PYTHONPATH"
+export PYTHONPATH="/usr/share/anki:$PYTHONPATH"
+export PYTHONPATH="/usr/share/anki/thirdparty:$PYTHONPATH"
 
 
 #export GOPATH=":$GOPATH"
+export GOPATH="/usr/lib/go:$GOPATH"
+export GOPATH="/home/ben/Source/.gopath:$GOPATH"
+
+export CALIBRE_CONFIG_DIRECTORY="/home/ben/Documents/calibre"
