@@ -41,6 +41,11 @@ main = do
               -- Dmenu app launcher with added font
             , ((modifier, xK_p),                spawn "dmenu_run -fn xft:Inconsolata:style=Medium:pixelsize=14")
 
+              -- Music playback
+            , ((0, xK_F1),                      spawn "ncmpcpp prev")
+            , ((0, xK_F2),                      spawn "ncmpcpp next")
+            , ((0, xK_F3),                      spawn "ncmpcpp toggle")
+
               -- Adjust backlight
             , ((0, xK_F6),                      spawn "xbacklight -10")
             , ((0, xK_F7),                      spawn "xbacklight +10")
