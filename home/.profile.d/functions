@@ -33,16 +33,18 @@ polychromium(){
 }
 
 # Ensure destination directory (or destination containing-directory) exists before copy
-#   Example use: find dir/ -type f -mtime -30 | while read f; do mkcp $f monthly_backup/$f; done;
-mkcp(){
+# Examples:
+#   find dir/ -type f -mtime -30 | while read f; do mk cp -a "$f" "/non/existent/directory/$f"; done;
+#   mk mv ~/Downloads/default.conf /non/existent/directory/my.conf
+mk(){
     # Destination is directory -> Create directory
     if [[ "${@: -1}" =~ "/$" ]]; then
         mkdir -p "${@: -1}"
 
     # Destination is filename -> Create containing directory
     else
-        mkdir -p $( dirname "${@: -1}" )
+        mkdir -p "$( dirname ${@: -1} )"
     fi;
     
-    cp $@
+    $@
 }
