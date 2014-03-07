@@ -48,3 +48,15 @@ mk(){
     
     $@
 }
+
+# Record your actions their timings and timestamp the results
+record(){
+    d=$(date +"%Y-%m-%d_%H-%M-%S")
+
+    local actions="${d}_actions.script"
+    local timing="${d}_timing.script"
+
+    script --timing=$timing $actions 2> /dev/null
+
+    echo $actions $timing
+}
