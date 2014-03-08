@@ -1,0 +1,12 @@
+#!/bin/sh
+TIMEOUT=3
+
+# Kill existing notifications
+pkill notify-osd
+
+# Create notification
+notify-send "$1" "$2" --icon="$3"
+
+# Timeout (notify-osd does not play nice with the timeout)
+pid=$(pgrep notify-osd | head -n 1)
+sleep $TIMEOUT && kill $pid > /dev/null 2>&1 &

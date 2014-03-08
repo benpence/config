@@ -1,0 +1,40 @@
+#!/bin/sh
+VOLUME_INCREMENT=3
+
+# Get the volume in the format:
+#   amplitude-
+#   amplitude+
+# where the -/+ represents if it is muted or not, respectively
+present(){
+    local amixer_output=$(amixer get Master,0)
+
+    local amplitude=$(tail -n 1 <<< "$amixer_output" | awk '{print $4}' | egrep -o "[0-9]+")
+
+    local onOrOff=$(egrep -o "\[(on|off)\]" <<< "$amixer_output")
+    [ "$onOrOff" == "[off]" ]
+
+    if [[ "$?" -eq "0" ]]; then
+        echo "$amplitude-"
+    else
+        echo "$amplitude+"
+    fi
+}
+
+case "$1" in
+toggle)                                         # Toggle mute
+    amixer -q sset Master,0 toggle
+    ;;
+down)                                           # Decrease volume
+    amixer -q sset Master,0 $VOLUME_INCREMENT-
+    ;;
+up)                                             # Increase volume
+    amixer -q sset Master,0 $VOLUME_INCREMENT+
+    ;;
+*)                                              # Display at terminal and exit
+    present
+    exit
+    ;;
+esac
+
+# After change, create desktop notification
+$HOME/bin/notify "volume" "$(present)"

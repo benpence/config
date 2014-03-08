@@ -51,7 +51,7 @@ main = do
             , ((0, xK_F7),                      spawn "xbacklight +10")
 
               -- Volume mute, down, up for F8 F9 F10
-            , ((0, xK_F8),                      spawn "amixer sset Master,0 toggle")
-            , ((0, xK_F9),                      spawn "amixer sset Master,0 3-")
-            , ((0, xK_F10),                     spawn "amixer sset Master,0 3+")
+            , ((0, xK_F8),                      spawn "$HOME/bin/volume toggle")
+            , ((0, xK_F9),                      spawn "$HOME/bin/volume down")
+            , ((0, xK_F10),                     spawn "$HOME/bin/volume up")
             ]
