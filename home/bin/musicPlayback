@@ -1,0 +1,55 @@
+#!/bin/sh
+show(){
+    # Get output from 'mpc' in format:
+    #
+    #   title (length)? (year)?
+    #   album?
+    #   artist?
+    #   playlist_position
+    #   music_file
+    #   playback_info 
+    local output=$(mpc -f '%title%[ (%time%)][ (%date%)][\n %album%][\n %artist%]\n%position%\n%file%')
+
+    # Paused? -> don't notify
+    if [ "$(grep playing <<< "$output")" == "" ]; then
+        exit
+    fi
+
+    # Remove mpc's default lines that look like:
+    #
+    #   [playing] #9/39   1:31/3:55 (38%)
+    #   volume:100%   repeat: on    random: off   single: off   consume: off
+    output="$(head -n -2 <<< "$output")"
+
+    # Play information = remove bottom two lines (playlist_position and music_file
+    local playing=$(head -n -2 <<< "$output")
+    # Playlist position = second to last line from bottom
+    local position=$(tail -n 2 <<< "$output" | head -n 1)
+
+    # Find icon if any
+    local musicfile="$(tail -n 1 <<< "$output")"
+    local dir="/home/ben/Music/music/$(dirname "$musicfile")"
+    local icon="$dir/$(ls "$dir" | egrep ".(jpg|jpeg|png)$" | head -n 1)"
+
+    # Create notification
+    $HOME/bin/notify "mpd ($position)" "$playing" "$icon"
+}
+
+case $1 in
+toggle)         # Toggle pause/play
+    mpc toggle
+    show
+    ;;
+next|prev)      # Skip back or forward
+    mpc $1
+    show
+    ;;
+restart)        # Restart current song
+    mpc prev
+    mpc next
+    show
+    ;;
+*)              # Only show the notification
+    show
+    ;;
+esac
