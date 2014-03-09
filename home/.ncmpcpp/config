@@ -1,0 +1,16 @@
+ncmpcpp_directory = "~/.ncmpcpp"
+lyrics_directory = "~/.ncmpccp/lyrics"
+
+mpd_host = "localhost"
+mpd_port = "6600"
+mpd_music_dir = "/path/to/music"
+
+mouse_support = "no"
+
+user_interface = "alternative"
+
+allow_physical_files_deletion = "no"
+allow_physical_directories_deletion = "no"
+
+locked_screen_width_part = "0"
+ask_for_locked_screen_width_part = "no"

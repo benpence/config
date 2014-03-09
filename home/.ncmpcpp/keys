@@ -1,0 +1,49 @@
+key_quit                            = 'q'
+key_pause                           = 'p'
+key_go_to_position                  = 'g'
+key_next                            = 'L'
+key_prev                            = 'H'
+key_seek_forward                    = 'f'                   # hold down to go forward
+key_seek_backward                   = 'b'                   # hold down to go back
+
+key_toggle_repeat                   = 'r'
+key_toggle_single                   = 'R'
+key_toggle_consume                  = 'O'                   # delete songs from playlist after play
+key_toggle_random                   = 'z'
+
+key_up                              = 'k'
+key_down                            = 'j'
+key_prev_column                     = 'h'                   # move left
+key_next_column                     = 'l'                   # move right
+
+key_apply_filter                    = '`'                   # search list
+key_find_forward                    = '/'
+key_find_backward                   = '?'
+key_next_found_position             = 'n'                   # move forward in find
+key_prev_found_position             = 'N'                   # move back in find
+
+key_toggle_display_mode             = 9     # tab
+key_home                            = 'K'                   # move to top
+key_page_up                         = 2     # ctrl b
+key_end                             = 'J'                   # move to bottom
+key_page_down                       = 6     # ctrl f
+key_move_song_up                    = 11    # ctrl k
+key_move_song_down                  = 10    # ctrl j
+
+key_delete                          = 330 'd'               # delete from playlist
+
+key_edit_tags                       = 'e'
+
+# Disabled keys
+key_screen_switcher                 = 0
+key_backward_screen_switcher        = 0
+key_toggle_bitrate_visibility       = 0
+key_stop                            = 0
+key_volume_up                       = 0
+key_volume_down                     = 0
+key_lyrics                          = 0
+key_toggle_lyrics_db                = 0
+key_toggle_fetching_lyrics_for_current_song_in_background = 0
+key_clock                           = 0
+key_go_to_containing_directory      = 0
+key_lockunlock_current_screen       = 0
