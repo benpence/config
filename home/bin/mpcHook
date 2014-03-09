@@ -1,0 +1,5 @@
+#!/bin/sh
+while :; do
+    mpc -q current --wait 2>&1 > /dev/null
+    $HOME/bin/musicPlayback &
+done

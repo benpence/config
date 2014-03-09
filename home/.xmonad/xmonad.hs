@@ -42,9 +42,10 @@ main = do
             , ((modifier, xK_p),                spawn "dmenu_run -fn xft:Inconsolata:style=Medium:pixelsize=14")
 
               -- Music playback
-            , ((0, xK_F1),                      spawn "ncmpcpp prev")
-            , ((0, xK_F2),                      spawn "ncmpcpp next")
-            , ((0, xK_F3),                      spawn "ncmpcpp toggle")
+            , ((0, xK_F1),                      spawn "mpc prev")
+            , ((0, xK_F2),                      spawn "mpc next")
+            , ((0, xK_F3),                      spawn "mpc stop && mpc play")
+            , ((0, xK_F4),                      spawn "mpc toggle && $HOME/bin/musicPlayback")
 
               -- Adjust backlight
             , ((0, xK_F6),                      spawn "xbacklight -10")
