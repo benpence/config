@@ -41,6 +41,8 @@ Optional modehook for mode-specific"
     (cond ((looking-at   "\\s\(") (forward-list 1))
           ((looking-back "\\s\)") (backward-list 1)))))
 
+  ("C-c C-j" (lambda () (interactive) (fill-paragraph)))
+
   ; TODO: override keys properly
   ; Duplicate M-< M-> as C-, C-. respectively
   ;("C-," 'beginning-of-buffer)
