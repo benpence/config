@@ -24,6 +24,7 @@
     default         = matching
 
 [core]
+    editor          = emacs -nw
     excludesfile    = ~/.gitignore
 
 [merge]
