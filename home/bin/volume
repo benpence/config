@@ -36,5 +36,8 @@ up)                                             # Increase volume
     ;;
 esac
 
+# Update tmux status line
+tmux refresh -S
+
 # After change, create desktop notification
 $HOME/bin/notify "volume" "$(present)"
