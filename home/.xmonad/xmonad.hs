@@ -72,8 +72,8 @@ main = do
             , ((0, xK_F4),                      spawn "mpc toggle && $HOME/bin/musicPlayback")
 
               -- Adjust backlight
-            , ((0, xK_F6),                      spawn "xbacklight -10")
-            , ((0, xK_F7),                      spawn "xbacklight +10")
+            , ((0, xK_F6),                      spawn "xbacklight -3 -time 20")
+            , ((0, xK_F7),                      spawn "xbacklight +3 -time 20")
 
               -- Volume mute, down, up for F8 F9 F10
             , ((0, xK_F8),                      spawn "$HOME/bin/volume toggle")
