@@ -17,7 +17,7 @@ setxkbmap   -layout "dvp,us"        \
 [[ "" == `pgrep -x xscreensaver` ]] && xscreensaver -no-splash &
 
 # Show mpd song change notifications
-[[ "" == `pgrep mpdHook` ]] && $HOME/bin/mpcHook &
+[[ "" == `pgrep mpcHook` ]] && $HOME/bin/mpcHook &
 
 # Launch urxvt if it's not running yet
 [[ "" == `pgrep -x urxvt` ]] && urxvt &
