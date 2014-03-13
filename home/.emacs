@@ -22,10 +22,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(backup-by-copying t nil nil "Always use copying to create backup files")
+ '(backup-directory-alist (quote (("." . "~/.emacs.d/backup"))) nil nil "Which files to backup and where")
+ '(delete-old-versions t)
+ '(dired-kept-versions 2 nil nil "Backups")
  '(global-linum-mode t nil nil "Line numbers on left for all modes")
  '(ido-create-new-buffer (quote always) nil nil "Create new buffers when necessary")
  '(ido-enable-flex-matching t nil nil "Match if text is correctly ordered subset of a file")
  '(ido-mode (quote both) nil (ido) "Enable ido mode for accessing buffers/files")
+ '(kept-new-versions 6)
  '(linum-format (quote linum-relative) nil nil "Add a space after line, between text")
  '(linum-relative-current-symbol "" nil nil "Show absolute line number for current line")
  '(linum-relative-format "%2s " nil nil "Ensures 2 digit width on relative line numbers. Adds space between numbers and text")
