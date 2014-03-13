@@ -7,5 +7,5 @@
 (require 'linum-relative)           ; relative line numbers
 
 ; Color Theme
-(require 'color-theme-tomorrow)
-(color-theme-tomorrow--define-theme night-bright)
+(setq custom-safe-themes t)
+(load-theme 'oak)

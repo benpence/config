@@ -37,7 +37,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(linum ((t (:background "#000"))))
- '(linum-relative-current-face ((t (:inherit linum :background "#333"))) nil "Black background"))
+ '(linum-relative-current-face ((t (:inherit linum :background "color-54" :foreground "#fff"))) nil "Black background"))
 
 ; TODO: Research post loading hook
 (linum-relative-toggle)
