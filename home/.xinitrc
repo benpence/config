@@ -19,5 +19,8 @@ setxkbmap   -layout "dvp,us"        \
 # Show mpd song change notifications
 [[ "" == `pgrep mpcHook` ]] && $HOME/bin/mpcHook &
 
+# Show mpd song change notifications
+[[ "" == `pgrep -x mpd` ]] && mpd $HOME/Music/config &
+
 # Launch urxvt if it's not running yet
 [[ "" == `pgrep -x urxvt` ]] && urxvt &
