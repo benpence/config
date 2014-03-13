@@ -5,6 +5,8 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.EZConfig(removeKeys)
+import XMonad.StackSet(sink)
 
 myManageHook = composeAll
     [ className =? "Gimp"     --> doShift "3"
@@ -33,13 +35,35 @@ main = do
         , normalBorderColor  = "#000000"
         , focusedBorderColor = "#333333"
 
+        -- Remove specific default keys
+        } `removeKeys`
+            -- This has been changed to mod-shift-p
+            [ (modifier, xK_p)
+
+            -- Removed to ease emacs compatibility
+            , (modifier, xK_j)
+            , (modifier, xK_k)
+
+            , (modifier, xK_w)
+            , (modifier, xK_e)
+            , (modifier, xK_r)
+            , (modifier .|. shiftMask, xK_w)
+            , (modifier .|. shiftMask, xK_e)
+            , (modifier .|. shiftMask, xK_r)
+
+            , (modifier, xK_t)
+
         -- Hotkeys
-        } `additionalKeys`
+        ] `additionalKeys`
               -- Lock screensaver button
             [ ((modifier .|. shiftMask, xK_l),  spawn "xscreensaver-command -lock")
 
               -- Dmenu app launcher with added font
-            , ((modifier, xK_p),                spawn "dmenu_run -fn xft:Inconsolata:style=Medium:pixelsize=14")
+            , ((modifier .|. shiftMask, xK_p),  spawn "dmenu_run -fn xft:Inconsolata:style=Medium:pixelsize=14")
+
+              -- New combination for 'unfloating' (sink) a floating window back into the layout manager
+            , ((modifier .|. shiftMask, xK_t),  withFocused $ windows . sink)
+
 
               -- Music playback
             , ((0, xK_F1),                      spawn "mpc prev")
