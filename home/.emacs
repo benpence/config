@@ -24,6 +24,7 @@
  ;; If there is more than one, they won't work right.
  '(backup-by-copying t nil nil "Always use copying to create backup files")
  '(backup-directory-alist (quote (("." . "~/.emacs.d/backup"))) nil nil "Which files to backup and where")
+ '(confirm-nonexistent-file-or-buffer nil nil nil "Never confirm new file/buffer")
  '(delete-old-versions t)
  '(dired-kept-versions 2 nil nil "Backups")
  '(global-linum-mode t nil nil "Line numbers on left for all modes")
