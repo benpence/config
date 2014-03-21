@@ -109,3 +109,9 @@ Optional modehook for mode-specific"
           ))))
     )
   'org-mode-hook)
+
+; haskell-mode
+(my-add-keys '(
+   ("C-c c" haskell-compile)
+   )
+  'haskell-mode-hook)

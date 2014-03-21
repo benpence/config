@@ -18,3 +18,6 @@
 (setq kill-buffer-query-functions
       (remq 'process-kill-buffer-query-function
             kill-buffer-query-functions))
+
+; Haskell mode indentation
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
