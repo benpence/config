@@ -15,6 +15,9 @@ Optional modehook for mode-specific"
       
     ; Mode-specific or global hotkey?
     (if modehook
+        ; TODO: More efficient to use instead:
+        ;   (eval-after-load MODE '(define-key MODE-map KEY FUNCTION))
+        ; Mode keys
         (add-hook
           modehook
           (lambda () (mapc
@@ -38,10 +41,24 @@ Optional modehook for mode-specific"
   ; Alternate point between matching parens
   ("C-c C-c" (lambda (arg)
     (interactive "p")
-    (cond ((looking-at   "\\s\(") (forward-list 1))
-          ((looking-back "\\s\)") (backward-list 1)))))
+          ; Match open paren
+    (cond ((looking-at "\\s\(")
+            (forward-list 1))
+          ; Convenience for matching open paren after C-e
+          ((and (looking-back "\\s\(")
+                (looking-at "$"))
+            (backward-char 1)
+            (forward-list 1))
+          ; Match close paren
+          ((looking-back "\\s\)")
+            (backward-list 1)))))
 
-  ("C-c C-j" (lambda () (interactive) (fill-paragraph)))
+  ("C-c C-j" (lambda (begin end)
+    (interactive "r")
+    (let
+      ; TODO:
+      ((fill-column 10000000))
+      (fill-paragraph nil '(begin end)))))
 
   ; TODO: override keys properly
   ; Duplicate M-< M-> as C-, C-. respectively
@@ -59,8 +76,7 @@ Optional modehook for mode-specific"
 
 ; Org mode
 (my-add-keys '(
-    ; TODO: How to quote here?
-    ("C-c a" (lambda () (interactive) (org-agenda)))
-    ("C-c c" (lambda () (interactive) (org-capture)))
+    ("C-c a" org-agenda)  ; Agenda
+    ("C-c c" org-capture) ; Create task from text
     )
   'org-mode-hook)
