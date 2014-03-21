@@ -35,6 +35,7 @@
  '(linum-format (quote linum-relative) nil nil "Add a space after line, between text")
  '(linum-relative-current-symbol "" nil nil "Show absolute line number for current line")
  '(linum-relative-format "%2s " nil nil "Ensures 2 digit width on relative line numbers. Adds space between numbers and text")
+ '(org-agenda-files (quote ("~/Documents/me/")))
  '(show-paren-delay 0.1 nil nil "Showing matching parens is nearly instantaneous")
  '(show-paren-mode t nil nil "Show matching parentheses when pointer is on them")
  '(undo-limit 20000000 nil nil "Bytes to hold for undo history")
