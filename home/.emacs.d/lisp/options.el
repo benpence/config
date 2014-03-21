@@ -10,3 +10,11 @@
 (ido-mode 1)
 (require 'ido-vertical-mode)
 (ido-vertical-mode)
+
+; Replace yes/no functions with y/n
+(fset 'yes-or-no-p 'y-or-n-p)
+
+; Confirm kill buffer only on modified buffers
+(setq kill-buffer-query-functions
+      (remq 'process-kill-buffer-query-function
+            kill-buffer-query-functions))
