@@ -51,6 +51,7 @@
  ;; If there is more than one, they won't work right.
  '(linum ((t (:background "#000" :foreground "color-227"))))
  '(linum-relative-current-face ((t (:inherit linum :background "color-54" :foreground "brightwhite"))) nil "Line numbers face")
+ '(org-column ((t (:background "grey10" :strike-through nil :underline nil :slant normal :weight normal))) nil "Background for org column view")
 )
 
 ; TODO: Research post loading hook
