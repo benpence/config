@@ -37,6 +37,7 @@
  '(linum-relative-format "%2s " nil nil "Ensures 2 digit width on relative line numbers. Adds space between numbers and text")
  '(org-agenda-files (quote ("~/Documents/me/")))
  '(org-footnote-auto-adjust t)
+ '(org-startup-folded t nil nil "Start org mode showing everything")
  '(org-startup-indented t)
  '(show-paren-delay 0.1 nil nil "Showing matching parens is nearly instantaneous")
  '(show-paren-mode t nil nil "Show matching parentheses when pointer is on them")
