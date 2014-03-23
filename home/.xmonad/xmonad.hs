@@ -44,6 +44,8 @@ main = do
             , (modifier, xK_j)
             , (modifier, xK_k)
 
+            , (modifier, xK_Return)
+
             , (modifier, xK_w)
             , (modifier, xK_e)
             , (modifier, xK_r)
