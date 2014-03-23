@@ -1,0 +1,30 @@
+[submodule "home/.emacs.d/pkg/haskell-mode"]
+	path = home/.emacs.d/pkg/haskell-mode
+	url = https://github.com/haskell/haskell-mode
+[submodule "ido-vertical-mode"]
+	path = home/.emacs.d/pkg/ido-vertical-mode
+	url = https://github.com/gempesaw/ido-vertical-mode.el
+[submodule "home/.emacs.d/pkg/scala-mode2"]
+	path = home/.emacs.d/pkg/scala-mode2
+	url = git://github.com/hvesalai/scala-mode2.git
+[submodule "evil-mode"]
+	path = home/.emacs.d/pkg/evil
+	url = git://gitorious.org/evil/evil.git
+[submodule "home/.emacs.d/pkg/linum-relative"]
+	path = home/.emacs.d/pkg/linum-relative
+	url = https://github.com/coldnew/linum-relative
+[submodule "home/.emacs.d/elpa/linum-relative"]
+	path = home/.emacs.d/elpa/linum-relative
+	url = https://github.com/coldnew/linum-relative
+[submodule "home/.emacs.d/elpa/evil"]
+	path = home/.emacs.d/elpa/evil
+	url = git://gitorious.org/evil/evil.git
+[submodule "home/.emacs.d/elpa/scala-mode2"]
+	path = home/.emacs.d/elpa/scala-mode2
+	url = git://github.com/hvesalai/scala-mode2.git
+[submodule "home/.emacs.d/elpa/ido-vertical-mode.el"]
+	path = home/.emacs.d/elpa/ido-vertical-mode
+	url = https://github.com/gempesaw/ido-vertical-mode.el
+[submodule "home/.emacs.d/elpa/haskell-mode"]
+	path = home/.emacs.d/elpa/haskell-mode
+	url = https://github.com/haskell/haskell-mode

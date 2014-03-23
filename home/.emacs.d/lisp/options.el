@@ -19,5 +19,16 @@
       (remq 'process-kill-buffer-query-function
             kill-buffer-query-functions))
 
-; Haskell mode indentation
+; haskell-mode
+(require 'haskell-mode-autoloads)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
+; Evil mode (vim emulation)
+(require 'evil)
+(evil-mode 1)
+
+; haskell-mode
+(require 'haskell-mode-autoloads)
+
+; scala-mode
+(require 'scala-mode2)
