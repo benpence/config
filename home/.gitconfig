@@ -14,11 +14,10 @@
     hist            = log --all --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%cd%Creset%C(red)%d%Creset %s %C(magenta)%an <%ae>%Creset'     --date=short
     history         = log --all --graph --pretty=format:'%C(yellow)%h%Creset %C(green)%cd%Creset%C(red)%d%Creset %s %C(magenta)%an <%ae>%Creset%n%b' --date=iso --stat
     histref         = reflog -g         --pretty=format:'%C(yellow)%h%Creset %C(green)%gD%Creset %gs'                                                --date=iso
-    
-    ; git fix                 # Open message file for writing
-    ; git fix FILE1 FILE2     # Add changes to FILE1 and FILE2 to top commit
-    ; git fix -a              # Add all changes in working copy to top commit
-    fix             = commit --amend -C HEAD
+
+    ; Merge only remote changes that are harmless (https://stackoverflow.com/questions/15316601/in-what-cases-could-git-pull-be-harmful)
+    up              = "!git remote update -p; git merge --ff-only @{u}"    
+
 
 [push]
     default         = matching
