@@ -1,8 +1,2 @@
-# screen
-.screen
-
-# vim
-.vim/session/backup
-.vim/session/undo
-.vim/session/view
-.vim/session/swp
+# emacs
+.emacs.d/backupp
