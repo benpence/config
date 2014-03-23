@@ -115,3 +115,16 @@ Optional modehook for mode-specific"
    ("C-c c" haskell-compile)
    )
   'haskell-mode-hook)
+
+; ido-mode
+(add-hook 'ido-setup-hook (lambda ()
+  ; Redefines <SPACE> to insert a space in ido mode
+  ;   The ido-complete-space docstring:
+  ;     "Try completion unless inserting the space makes sense
+  ;   Apparently, opening a new file with a space in it does not make sense,
+  ;   hence this hackish remapping
+  (define-key ido-completion-map " "
+    (lambda ()
+      (interactive)
+      (insert " ")))
+  ))
