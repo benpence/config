@@ -1,15 +1,13 @@
 import System.IO
 
 import XMonad
-import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.EZConfig(removeKeys)
 import XMonad.StackSet(sink)
 
 myManageHook = composeAll
     [ className =? "Gimp"     --> doShift "3"
-    , className =? "Inkscape" --> doShift "3"
-    , manageDocks ]
+    , className =? "Inkscape" --> doShift "3" ]
 
 -- Modifier is Alt
 modifier = mod1Mask
@@ -21,12 +19,8 @@ main = do
     xmonad $ defaultConfig
         -- Terminal to launch on Mod-Shift-Enter
         { terminal           = "urxvt"
-
         , workspaces         = ["1", "2", "3"]
         , modMask            = modifier
-
-        , layoutHook         = avoidStruts   $  layoutHook defaultConfig
-        , manageHook         = myManageHook <+> manageHook defaultConfig
         
         -- Window borders
         , borderWidth        = 1
