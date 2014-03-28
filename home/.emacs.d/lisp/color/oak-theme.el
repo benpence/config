@@ -1,5 +1,5 @@
 (deftheme oak
-  "Created 2014-03-13.")
+  "Created 2014-03-14.")
 
 (custom-theme-set-faces
  'oak
@@ -14,7 +14,7 @@
  '(font-lock-builtin-face ((t (:foreground "#afafd7"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "color-111"))))
  '(font-lock-comment-face ((t (:foreground "color-111"))))
- '(font-lock-constant-face ((((class color) (min-colors 89)) (:foreground "#afafd7"))))
+ '(font-lock-constant-face ((((class color) (min-colors 89)) (:foreground "color-73"))))
  '(font-lock-doc-face ((((class color) (min-colors 89)) (:foreground "#87afff"))))
  '(font-lock-function-name-face ((t (:foreground "color-131"))))
  '(font-lock-keyword-face ((t (:foreground "color-215"))))
@@ -26,7 +26,7 @@
  '(font-lock-type-face ((t (:foreground "color-146"))))
  '(font-lock-variable-name-face ((t (:foreground "color-230"))))
  '(font-lock-warning-face ((t (:foreground "color-131"))))
- '(button ((t (:inherit link) )))
+ '(button ((t (:inherit link))))
  '(link ((t (:underline "brightwhite" :foreground "brightwhite"))))
  '(link-visited ((((class color) (min-colors 89)) (:foreground "#87afff"))))
  '(fringe ((((class color) (min-colors 89)) (:background "#393939"))))
@@ -43,11 +43,6 @@
  '(match ((t (:inverse-video t))))
  '(next-error ((t (:inherit isearch-fail))))
  '(query-replace ((t (:inherit (isearch)))))
- '(diff-header ((t (:background "black"))))
- '(diff-file-header ((t (:background "black" :foreground "brightwhite" :underline t))))
- '(diff-added ((t (:inherit diff-changed :background "black" :foreground "green"))))
- '(diff-removed ((t (:inherit diff-changed :background "black" :foreground "red"))))
- '(diff-context ((t (:background "black" :foreground "color-247"))))
- '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1 :width normal :foundry "default" :family "default")))))
+)
 
 (provide-theme 'oak)
