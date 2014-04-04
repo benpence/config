@@ -37,7 +37,16 @@
 
 ; Customizations
 (setq
-  org-agenda-files              '("~/Documents/me/")
+  org-agenda-files              '(
+                                  "~/Documents/me/wiki/Todo.org"
+                                  "~/Documents/me/wiki/Projects.org"
+                                 )
+  org-agenda-format-date        "%d-%m-%Y"
+  ; Agenda starts on today
+  org-agenda-start-on-weekday   nil
+  ; Show 30 days in the future
+  org-agenda-span               'month
+
   org-archive-save-context-info '(time file category todo priority itags olpath ltags)
   org-footnote-auto-adjust      t
   org-log-done                  'time
