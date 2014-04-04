@@ -1,3 +1,6 @@
+; Use diff-mode for commit messages
+(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . diff-mode))
+
 (custom-set-faces
  ; Each chunk
  '(diff-header ((t (:background "black"))))
