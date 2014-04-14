@@ -20,6 +20,14 @@ present(){
     fi
 }
 
+# TODO: Figure out why alsa sometimes mutes the devices
+ensureUnmutedDevices(){
+    amixer -q sset Headphone,0 100
+    amixer -q sset Headphone,0 unmute
+    amixer -q sset Speaker,0 100
+    amixer -q sset Speaker,0 unmute
+}
+
 case "$1" in
 toggle)                                         # Toggle mute
     amixer -q sset Master,0 toggle
@@ -35,6 +43,9 @@ up)                                             # Increase volume
     exit
     ;;
 esac
+
+# Make sure alsa hasn't stupidly muted the devices
+ensureUnmutedDevices
 
 # Update tmux status line
 tmux refresh -S
