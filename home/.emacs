@@ -3,7 +3,7 @@
   "~/.emacs.d/lisp/"
   "~/.emacs.d/elpa/"
   )))
-  
+
   (mapc
     (lambda (path)
       (let ((default-directory path))
@@ -26,7 +26,7 @@
   "show-paren.el"        ; Matching parens options/keys
 
   "git.el"               ; diff color tweaks
-  "haskell-mode.el"
+  "haskell-mode.el"      ; haskell editing tweaks
   "scala-mode.el"
 
   "misc.el"              ; simple editor tweaks

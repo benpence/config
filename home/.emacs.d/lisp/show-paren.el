@@ -2,8 +2,8 @@
 
 ; Alternate point between matching parens
 (dbulysse-add-keys '(
-  ("C-c C-c" (lambda (arg)
-    (interactive "p")
+  ("C-c C-c" (lambda ()
+    (interactive)
           ; Match open paren
     (cond ((looking-at "\\s\(")
             (forward-list 1))
