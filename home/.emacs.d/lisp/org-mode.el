@@ -40,6 +40,7 @@
   org-agenda-files              '(
                                   "~/Documents/me/wiki/Todo.org"
                                   "~/Documents/me/wiki/Projects.org"
+                                  "~/Documents/me/wiki/Magical Mystery Tour.org"
                                  )
   org-agenda-format-date        "%d-%m-%Y"
   ; Agenda starts on today
@@ -48,6 +49,8 @@
   org-agenda-span               'month
 
   org-archive-save-context-info '(time file category todo priority itags olpath ltags)
+  ; Save all archived items in centralized file
+  org-archive-location          "~/Documents/me/org_archive::"
   org-footnote-auto-adjust      t
   org-log-done                  'time
   ; Start up showing all headlines
