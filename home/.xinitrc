@@ -24,3 +24,6 @@ setxkbmap   -layout "dvp,us"        \
 
 # Launch urxvt if it's not running yet
 [[ "" == `pgrep -x urxvt` ]] && urxvt &
+
+# Launch emacs daemon if it's not running yet
+[[ "" == `pgrep -f "emacs.*daemon"` ]] && emacs --daemon &
