@@ -1,7 +1,11 @@
 (require 'dbulysse)
 
+(setq
+  inhibit-startup-message t         ; no startup message
+  initial-scratch-message ""        ; empty scratch buffer
+  )
+
 ; Bars
-(setq inhibit-startup-message t)    ; no startup message
 (setq-default indent-tabs-mode nil) ; disable tabs
 
 (menu-bar-mode 0)                   ; disable menubar on frames
