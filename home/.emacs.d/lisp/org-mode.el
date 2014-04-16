@@ -54,13 +54,15 @@
   ; Only show days
   org-agenda-show-all-dates     nil
 
+  ; TODO changes
   org-archive-save-context-info '(time file category todo priority itags olpath ltags)
   ; Save all archived items in centralized file
   org-archive-location          "~/Documents/me/org_archive::"
-  org-footnote-auto-adjust      t
   org-log-done                  'time
+
+  org-footnote-auto-adjust      t
   ; Start up showing all headlines
-  org-startup-folded            'content 
+  org-startup-folded            'content
   org-startup-indented t
   )
 
