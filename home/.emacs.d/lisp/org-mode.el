@@ -1,6 +1,5 @@
 (require 'dbulysse)
 (dbulysse-add-keys '(
-    ("C-c a" org-agenda)  ; Agenda
     ("C-c c" org-capture) ; Create task from text
     ("C-c C" (lambda ()   ; Show TODO items in column view
       (interactive)
@@ -31,12 +30,17 @@
   'org-mode-hook)
 
 (dbulysse-add-keys '(
+    ("C-c a" org-agenda-list)  ; Agenda
+    ))
+
+(dbulysse-add-keys '(
     ; Toggle between showing raw links and description
     ("C-c L" org-toggle-link-display)
     ))
 
 ; Customizations
 (setq
+  ; Agenda
   org-agenda-files              '(
                                   "~/Documents/me/wiki/Todo.org"
                                   "~/Documents/me/wiki/Projects.org"
@@ -45,8 +49,10 @@
   org-agenda-format-date        "%d-%m-%Y"
   ; Agenda starts on today
   org-agenda-start-on-weekday   nil
-  ; Show 30 days in the future
-  org-agenda-span               'month
+  ; Show 90 days in the future
+  org-agenda-span               90
+  ; Only show days
+  org-agenda-show-all-dates     nil
 
   org-archive-save-context-info '(time file category todo priority itags olpath ltags)
   ; Save all archived items in centralized file
