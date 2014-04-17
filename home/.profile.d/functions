@@ -1,9 +1,15 @@
+#!/bin/sh
 # Aliases
 alias 'mkdir=mkdir -p'  # Make directories as needed
 alias 'l=ls --color'    # ls color output
 alias 'less=less -R'    # less displays color
 alias 'emacs=emacsclient -nw -c' # Console emacs only
 alias 'vim=vim -p'      # Open multiple files in tabs
+
+ekill(){
+    emacsclient -e '(kill-emacs)'
+    /usr/bin/emacs --daemon 2>&- &
+}
 
 # Custom functions
 wifi(){
