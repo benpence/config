@@ -2,7 +2,6 @@
 alias 'mkdir=mkdir -p'  # Make directories as needed
 alias 'l=ls --color'    # ls color output
 alias 'less=less -R'    # less displays color
-alias 'o=xdg-open'      
 alias 'emacs=emacsclient -nw -c' # Console emacs only
 alias 'vim=vim -p'      # Open multiple files in tabs
 
@@ -14,6 +13,15 @@ wifi(){
     done;
 
     echo "Connected."
+}
+
+# Open browser or default application for file
+o(){
+    if [[ "$#" == "0" ]]; then
+        chromium $HOME
+    else
+        xdg-open $@
+    fi
 }
 
 # Open chromium with semi-permanent incognito mode.
