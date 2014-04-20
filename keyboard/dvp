@@ -1,10 +1,9 @@
 // Dvorak Europe, by Ben Pence
 //   * USA Dvorak
 //   * Many European language accents added through AltGr key
-//   * Caps Lock is switched with Escape
 //
 // +----+----+----+----+----+----+----+----+----+----+----+----+----+------+
-// | `~ | ¡  | ½  | ¥  | ¢  | €  | £^ | ¤  |    |    |    |    |    |      |
+// | `~ | ¡  | ½  | ¥♯ | ¢  | €  | £^ | ¤  |    |    |    |    |    |      |
 // | `~ | 1! | 2@ | 3# | 4$ | 5% | 6^ | 7& | 8* | 9( | 0) | [{ | ]} | BACK |
 // +----+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+----+
 // |      | '" | «  | »  | ¶§ |    |    |    | çÇ | ®™ | λ  | ¿  |    |    |
@@ -13,7 +12,7 @@
 // |        | °  | øØ | œŒ | ˘µ |    | ðÐ |    | þÞ | ñÑ | ß  |  ­ |       |
 // | CAPS   | aA | oO | eE | uU | iI | dD | hH | tT | nN | sS | -_ | ENTER |
 // +--------+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-------+
-// |          | æÆ |    |    |    |    |    |    |    | ˇ  |    |          |
+// |          | æÆ |    |    |    |    | ♭  |    |    | ˇ  |    |          |
 // | SHIFT    | ;: | qQ | jJ | kK | xX | bB | mM | wW | vV | zZ |    SHIFT |
 // +----------+----+----+----+----+----+----+----+----+----+----+----------+
 //
@@ -28,7 +27,7 @@ xkb_symbols "dvp" {
     key <TLDE> { [ grave,           asciitilde,     dead_grave,      dead_tilde ] };
     key <AE01> { [ 1,               exclam,         exclamdown                  ] };
     key <AE02> { [ 2,               at,             onehalf                     ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
-    key <AE03> { [ 3,               numbersign,     yen                         ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+    key <AE03> { [ 3,               numbersign,     yen,             U266F      ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
     key <AE04> { [ 4,               dollar,         cent                        ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
     key <AE05> { [ 5,               percent,        EuroSign                    ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
     key <AE06> { [ 6,               asciicircum,    sterling,        dead_circumflex], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
@@ -82,7 +81,7 @@ xkb_symbols "dvp" {
     key <AB05> { [ x,               X] };
 
     // lower row, right side
-    key <AB06> { [ b,               B                                           ] };
+    key <AB06> { [ b,               B,              U266D                       ] };
     key <AB07> { [ m,               M                                           ] };
     key <AB08> { [ w,               W                                           ] };
     key <AB09> { [ v,               V,              dead_caron                  ] };
