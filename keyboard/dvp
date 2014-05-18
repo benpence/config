@@ -9,7 +9,7 @@
 // |      | '" | «  | »  | ¶§ |    |    |    | çÇ | ®™ | λ  | ¿  |    |    |
 // | TAB  | '" | ,< | .> | pP | yY | fF | gG | cC | rR | lL | /? | =+ | \| |
 // +------+----+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+    |
-// |        | °  | øØ | œŒ | ˘µ |    | ðÐ |    | þÞ | ñÑ | ß  |  ­ |       |
+// |        | °  | øØ | œŒ | ˘µ |    | ðÐ |    | þÞ | ñÑ | ß  | ¯  |       |
 // | CAPS   | aA | oO | eE | uU | iI | dD | hH | tT | nN | sS | -_ | ENTER |
 // +--------+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-+--+-------+
 // |          | æÆ |    |    |    |    | ♭  |    |    | ˇ  |    |          |
@@ -70,7 +70,7 @@ xkb_symbols "dvp" {
     key <AC08> { [ t,               T,              thorn,           THORN      ] };
     key <AC09> { [ n,               N,              ntilde,          Ntilde     ] };
     key <AC10> { [ s,               S,              ssharp                      ] };
-    key <AC11> { [ minus,           underscore,     hyphen,          hyphen     ], type[Group1] = "FOUR_LEVEL_ALPHABETIC" };
+    key <AC11> { [ minus,           underscore,     dead_macron                 ] };
     key <BKSL> { [ backslash,       bar                                         ] };
 
     // lower row, left side
