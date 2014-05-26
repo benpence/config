@@ -38,6 +38,54 @@
     ("C-c L" org-toggle-link-display)
     ))
 
+(defun org-agenda-truncate-category (max-width ellipses seperator)
+  "A string formatter that truncates the org category to length `max-width', uses `ellipses' to show truncation, and appends `seperator' at the end.
+
+The expression
+
+(let ((category \"primary\"  )) (org-agenda-truncate-category 8 \"...\" \":\")
+(let ((category \"secondary\")) (org-agenda-truncate-category 8 \"...\" \":\")
+
+will yield
+
+\"primary :\"
+\"secon...:\""
+  (let*
+    ( (truncated-width
+        (min
+          (length category)
+          max-width))
+      (untruncated-width
+        (-
+          max-width
+          truncated-width))
+      )
+
+    ; Truncate category?
+    (if (< max-width (length category))
+        (format
+          "%s%s%s"
+          ; Category without last _ characters
+          (substring
+            category
+            0
+            (-
+              max-width
+              (length ellipses)))
+          ellipses
+          seperator)
+        (format
+          "%s%s%s"
+          (substring
+            category
+            0
+            truncated-width)
+          ; Space padding
+          (make-string
+            untruncated-width
+            ? )
+          seperator))))
+
 ; Customizations
 (setq
   ; Agenda
@@ -53,6 +101,17 @@
   org-agenda-span               90
   ; Only show days
   org-agenda-show-all-dates     nil
+  ; Item format
+  org-agenda-prefix-format '(
+    (agenda . " %i %(org-agenda-truncate-category 16 \"...\" \":\") %?12t% s")
+    (timeline . "  % s")
+    (todo . " %i %-12:c")
+    (tags . " %i %-12:c")
+    (search . " %i %-12:c"))
+  ; Don't show tags in the agenda
+  org-agenda-remove-tags t
+  ; What to show when a task is scheduled today / overdue
+  org-agenda-scheduled-leaders  '("    " "(%2d)")
 
   ; TODO changes
   org-archive-save-context-info '(time file category todo priority itags olpath ltags)
