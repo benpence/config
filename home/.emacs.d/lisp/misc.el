@@ -32,6 +32,8 @@
   undo-limit                         20000000
   undo-outer-limit                   20000000
   undo-strong-limit                  20000000
+
+  require-final-newline              t
   )
 
 ; Global keys
