@@ -1,0 +1,12 @@
+#!/bin/sh
+# Command line script for opening tabs in tor-browser from external program
+BROWSER_DIR="$HOME/.tor-browser-en/INSTALL"
+BROWSER="${BROWSER_DIR}/Browser/firefox -profile ${BROWSER_DIR}/Data/Browser/profile.default"
+
+p=$( pgrep -f tor-browser-en )
+
+if [ "$p" == "" ]; then
+   $BROWSER ${@}
+else
+   $BROWSER -remote "openurl($1, new-tab)"
+fi

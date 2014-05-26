@@ -24,9 +24,23 @@
       (remq 'process-kill-buffer-query-function
             kill-buffer-query-functions))
 
+; Open links in tor
+(dbulysse-add-keys '(
+  ("C-c O" (lambda ()
+    (interactive)
+    (let
+      ( (browse-url-browser-function 'browse-url-generic)
+        (browse-url-generic-program  "~/bin/tor-browser")
+        (browse-url-generic-args     '("-new-tab"))
+        )
+      (org-open-at-point))))))
+
 (setq
   ; Never confirm new file/buffer")
   confirm-nonexistent-file-or-buffer nil
+
+  ; Default browser
+  browse-url-browser-function        'browse-url-chromium
 
   ; Bytes to hold for undo history
   undo-limit                         20000000
