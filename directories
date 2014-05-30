@@ -1,2 +1,8 @@
 # emacs
-.emacs.d/backupp
+.emacs.d/backup
+
+# vim
+.vim/session/backup
+.vim/session/swp
+.vim/session/undo
+.vim/session/view

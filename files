@@ -1,5 +1,4 @@
 # fonts
-.fonts/ProggySquareSZ.ttf
 .fonts/Inconsolata.otf
 
 # tmux
@@ -7,13 +6,23 @@
 
 # emacs
 .emacs
-.emacs.d/lisp/global
-.emacs.d/lisp/appearance.el
-.emacs.d/lisp/keys.el
-.emacs.d/lisp/options.el
-.emacs.d/lisp/path.el
-.emacs.d/lisp/packages.el
+.emacs.d/lisp/backup.el
 .emacs.d/lisp/color/oak-theme.el
+.emacs.d/lisp/evil-mode.el
+.emacs.d/lisp/git.el
+.emacs.d/lisp/haskell-mode.el
+.emacs.d/lisp/ido-mode.el
+.emacs.d/lisp/linum-mode.el
+.emacs.d/lisp/misc.el
+.emacs.d/lisp/org-mode.el
+.emacs.d/lisp/packages.el
+.emacs.d/lisp/pkg/dbulysse.el
+.emacs.d/lisp/scala-mode.el
+.emacs.d/lisp/show-paren.el
+
+# vim
+.vimrc
+.vim/colors/oak.vim
 
 # git
 .gitconfig
