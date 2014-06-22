@@ -103,7 +103,7 @@ will yield
   org-agenda-show-all-dates     nil
   ; Item format
   org-agenda-prefix-format '(
-    (agenda . " %i %(org-agenda-truncate-category 16 \"...\" \":\") %?12t% s")
+    (agenda . " %i %(org-agenda-truncate-category 16 \"~\" \":\") %?12t% s")
     (timeline . "  % s")
     (todo . " %i %-12:c")
     (tags . " %i %-12:c")
