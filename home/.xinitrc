@@ -9,7 +9,7 @@ xsetroot -cursor_name left_ptr
 #   * both shifts toggle to and from QWERTY
 setxkbmap   -layout "dvp,us"        \
             -variant ",altgr-intl"  \
-            -option "lv3:ralt_switch_multikey,grp:shifts_toggle," #caps:escape"
+            -option "lv3:ralt_switch_multikey,grp:shifts_toggle" #caps:escape"
 # Make Caps-Lock and extra Control
 [[ "" == `pgrep -x xmodmap` ]] && xmodmap $HOME/.Xmodmap
 
@@ -27,3 +27,6 @@ setxkbmap   -layout "dvp,us"        \
 
 # Launch emacs daemon if it's not running yet
 [[ "" == `pgrep -f "emacs.*daemon"` ]] && emacs --daemon &
+
+# Launch scim (Smart Common Input Method) daemon for foreign input
+[[ "" == `pgrep scim` ]] && scim -d &
