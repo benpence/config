@@ -1,17 +1,15 @@
 (require 'dbulysse)
+
 (dbulysse-add-keys '(
-    ("C-c c" org-capture) ; Create task from text
     ("C-c C" dbulysse-org-todo-columns)
+    ; Toggle between showing raw links and description
+    ("C-c L" org-toggle-link-display)
     )
   'org-mode-hook)
 
 (dbulysse-add-keys '(
-    ("C-c a" org-agenda-list)  ; Agenda
-    ))
-
-(dbulysse-add-keys '(
-    ; Toggle between showing raw links and description
-    ("C-c L" org-toggle-link-display)
+    ("C-c c" org-capture) ; Create task from text
+    ("C-c a" org-agenda)  ; Agenda
     ))
 
 ; Customizations
