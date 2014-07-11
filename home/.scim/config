@@ -1,4 +1,4 @@
-/DefaultIMEngineFactory/en_US = 065d7b20-dda2-47fb-8f94-3306d9a25e56
+/DefaultIMEngineFactory/en_US = IMEngine-M17N-ru-phonetic
 /FrontEnd/ChangeFactoryGlobally = false
 /FrontEnd/IMOpenedByDefault = false
 /FrontEnd/OnTheSpot = true
@@ -16,13 +16,6 @@
 /Hotkeys/FrontEnd/ShowFactoryMenu = 
 /Hotkeys/FrontEnd/Trigger = Zenkaku_Hankaku,Hangul,Control+Alt+space
 /Hotkeys/FrontEnd/ValidKeyMask = Shift+Control+Alt+Meta+QuirkKanaRo
-/IMEngine/Hangul/CommitByWord = false
-/IMEngine/Hangul/HangulKey = Hangul
-/IMEngine/Hangul/HanjaKey = Hangul_Hanja,F9
-/IMEngine/Hangul/HanjaModeKey = 
-/IMEngine/Hangul/KeyboardLayout = 2
-/IMEngine/Hangul/ShowCandidateComment = true
-/IMEngine/Hangul/UseAsciiMode = false
 /IMEngine/RawCode/Locales = default
 /Panel/Gtk/Color/ActiveBackground = light sky blue
 /Panel/Gtk/Color/ActiveText = black
@@ -34,6 +27,7 @@
 /Panel/Gtk/LookupTableVertical = false
 /Panel/Gtk/ShowStatusBox = false
 /Panel/Gtk/ShowTrayIcon = true
+/Panel/Gtk/ToolBar/AlwaysHidden = false
 /Panel/Gtk/ToolBar/AlwaysShow = false
 /Panel/Gtk/ToolBar/AutoSnap = true
 /Panel/Gtk/ToolBar/HideTimeout = 2
@@ -43,6 +37,7 @@
 /Panel/Gtk/ToolBar/ShowFactoryName = true
 /Panel/Gtk/ToolBar/ShowHelpIcon = true
 /Panel/Gtk/ToolBar/ShowMenuIcon = true
+/Panel/Gtk/ToolBar/ShowPropertyLabel = true
 /Panel/Gtk/ToolBar/ShowSetupIcon = true
 /Panel/Gtk/ToolBar/ShowStickIcon = false
-/UpdateTimeStamp = 1403414151:488952
+/UpdateTimeStamp = 1405099429:146938
