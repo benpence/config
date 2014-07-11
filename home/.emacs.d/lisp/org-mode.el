@@ -36,7 +36,7 @@
     (tags . " %i %(dbulysse-org-truncate-category 8 \"~\" \":\") %?12t% s")
     (search . " %i %-12:c"))
   ; Don't show tags in the agenda
-  org-agenda-remove-tags t
+  org-agenda-remove-tags        t
   ; What to show when a task is scheduled today / overdue
   org-agenda-scheduled-leaders  '("    " "(%2d)")
   ; Do not display time grid in agenda
@@ -51,7 +51,7 @@
   org-footnote-auto-adjust      t
   ; Start up showing all headlines
   org-startup-folded            'content
-  org-startup-indented t
+  org-startup-indented          t
   )
 
 ; Face customizations
