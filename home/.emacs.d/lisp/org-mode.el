@@ -39,6 +39,8 @@
   org-agenda-remove-tags t
   ; What to show when a task is scheduled today / overdue
   org-agenda-scheduled-leaders  '("    " "(%2d)")
+  ; Do not display time grid in agenda
+  org-agenda-use-time-grid      nil
 
   ; TODO changes
   org-archive-save-context-info '(time file category todo priority itags olpath ltags)
