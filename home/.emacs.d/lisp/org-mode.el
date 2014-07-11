@@ -18,7 +18,8 @@
   org-agenda-files              '(
                                   "~/Documents/me/wiki/Todo.org"
                                   "~/Documents/me/wiki/Projects.org"
-                                  "~/Documents/me/wiki/Magical Mystery Tour.org"
+                                  "~/Documents/me/wiki/Travel.org"
+                                  "~/Documents/me/wiki/Spark.org"
                                  )
   org-agenda-format-date        "%d-%m-%Y"
   ; Agenda starts on today
