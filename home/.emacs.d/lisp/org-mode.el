@@ -1,31 +1,7 @@
 (require 'dbulysse)
 (dbulysse-add-keys '(
     ("C-c c" org-capture) ; Create task from text
-    ("C-c C" (lambda ()   ; Show TODO items in column view
-      (interactive)
-      ; Already showing this information?
-      ; TODO find better columns view detection
-      (if (and (boundp 'org-columns-begin-marker)
-               (eql
-                 (marker-buffer org-columns-begin-marker)
-                 (current-buffer)))
-          ; Clear columns and highlights
-          (progn
-            (org-columns-quit)
-            (org-remove-occur-highlights)
-            (org-content))
-          ; Show columns (file-wide) and highlights
-          (save-excursion
-            (org-show-todo-tree nil)
-            ;(org-sparse-tree)
-            ; TODO insert newline and then remove it
-            (beginning-of-buffer)
-            (insert "\n")
-            ; TODO use (window-width) to truncate ITEM formatter
-            (org-columns (concat
-              "%28ITEM %TODO %SCHEDULED %TAGS"))
-            (delete-char 1)
-          ))))
+    ("C-c C" dbulysse-org-todo-columns)
     )
   'org-mode-hook)
 
@@ -37,54 +13,6 @@
     ; Toggle between showing raw links and description
     ("C-c L" org-toggle-link-display)
     ))
-
-(defun org-agenda-truncate-category (max-width ellipses seperator)
-  "A string formatter that truncates the org category to length `max-width', uses `ellipses' to show truncation, and appends `seperator' at the end.
-
-The expression
-
-(let ((category \"primary\"  )) (org-agenda-truncate-category 8 \"...\" \":\")
-(let ((category \"secondary\")) (org-agenda-truncate-category 8 \"...\" \":\")
-
-will yield
-
-\"primary :\"
-\"secon...:\""
-  (let*
-    ( (truncated-width
-        (min
-          (length category)
-          max-width))
-      (untruncated-width
-        (-
-          max-width
-          truncated-width))
-      )
-
-    ; Truncate category?
-    (if (< max-width (length category))
-        (format
-          "%s%s%s"
-          ; Category without last _ characters
-          (substring
-            category
-            0
-            (-
-              max-width
-              (length ellipses)))
-          ellipses
-          seperator)
-        (format
-          "%s%s%s"
-          (substring
-            category
-            0
-            truncated-width)
-          ; Space padding
-          (make-string
-            untruncated-width
-            ? )
-          seperator))))
 
 ; Customizations
 (setq
@@ -103,10 +31,10 @@ will yield
   org-agenda-show-all-dates     nil
   ; Item format
   org-agenda-prefix-format '(
-    (agenda . " %i %(org-agenda-truncate-category 16 \"~\" \":\") %?12t% s")
+    (agenda . " %i %(dbulysse-org-truncate-category 8 \"~\" \":\") %?12t% s")
     (timeline . "  % s")
     (todo . " %i %-12:c")
-    (tags . " %i %-12:c")
+    (tags . " %i %(dbulysse-org-truncate-category 8 \"~\" \":\") %?12t% s")
     (search . " %i %-12:c"))
   ; Don't show tags in the agenda
   org-agenda-remove-tags t
