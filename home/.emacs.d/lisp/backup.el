@@ -7,6 +7,10 @@
   backup-directory-alist '(
     ("." . "~/.emacs.d/backup")
     )
+  ; Where to put modified, unsaved files
+  auto-save-file-name-transforms '(
+    (".*" "~/.emacs.d/backup/" t)
+    )
   ; Delete old backups silently
   delete-old-versions    t
   ; Oldest backups to keep
