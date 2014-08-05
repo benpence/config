@@ -10,7 +10,7 @@ myManageHook = composeAll
     , className =? "Inkscape" --> doShift "3" ]
 
 -- Modifier is Alt
-modifier = mod1Mask
+modifier = mod4Mask
 
 main = do
     -- Run WM-independent startup commands
