@@ -16,11 +16,7 @@
 (setq
   ; Agenda
   org-agenda-files              '(
-                                  "~/Documents/me/wiki/Todo.org"
-                                  "~/Documents/me/wiki/Projects.org"
-                                  "~/Documents/me/wiki/Travel.org"
-                                  "~/Documents/me/wiki/Spark.org"
-                                  "~/Documents/me/wiki/Recurring.org"
+                                  "~/Documents/me/agenda/"
                                  )
   org-agenda-format-date        "%d-%m-%Y"
   ; Agenda starts on today
