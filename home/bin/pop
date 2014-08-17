@@ -1,4 +1,0 @@
-#!/bin/sh
-stack=~/.stack
-cat $stack 2> /dev/null
-rm $stack  2> /dev/null
