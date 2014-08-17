@@ -1,0 +1,14 @@
+while read img; do
+    v=`exiftool -"FileModifyDate" $img`
+    date_created=`awk '{ print $5 }' <<< $v | sed 's/:/-/g'`
+    time_created=`awk '{ print $6 }' <<< $v | sed 's/-.*$//'`
+    
+    f=`basename "$img"`
+    recorder_id=`awk -F"." '{ print $1 }' <<< "$f" | awk -F"_" '{ print $2 }'`
+    suffix=`awk -F"." '{ print $2 }' <<< "$f"` 
+
+    new_prefix="${date_created}_${time_created}_${recorder_id}"
+
+    mv "$img" "${new_prefix}.${suffix}"
+    echo mv $img "${new_prefix}.${suffix}"
+done

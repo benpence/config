@@ -1,0 +1,29 @@
+while read img; do
+    v=`exiftool -"CreateDate" $img`
+    date_created=`awk '{ print $4 }' <<< $v | sed 's/:/-/g'`
+    time_created=`awk '{ print $5 }' <<< $v`
+
+    f=`basename "$img"`
+    prefix=`awk -F"." '{ print $1 }' <<< "$f"`
+    suffix=`awk -F"." '{ print $2 }' <<< "$f"` 
+    original="${prefix}_original.${suffix}"
+
+    c="${date_created}_${time_created}"
+
+    for i in `seq 1 1000`; do
+        new_prefix="${c}_${i}"
+        if [ -a "${new_prefix}.${suffix}" ]; then
+            continue
+        fi
+
+        mv "$img" "${new_prefix}.${suffix}"
+        echo mv $img "${new_prefix}.${suffix}"
+
+        if [ -f "$original" ]; then
+            mv "$original" "${new_prefix}_original.${suffix}"
+            echo mv $original "${new_prefix}_original.${suffix}"
+        fi;
+
+        break
+    done
+done
