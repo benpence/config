@@ -53,7 +53,7 @@ main = do
             [ ((modifier .|. shiftMask, xK_l),  spawn "xscreensaver-command -lock")
 
               -- Dmenu app launcher with added font
-            , ((modifier .|. shiftMask, xK_p),  spawn "dmenu_run -fn xft:Inconsolata:style=Medium:pixelsize=14")
+            , ((modifier .|. shiftMask, xK_p),  spawn "dmenu_run")
 
               -- New combination for 'unfloating' (sink) a floating window back into the layout manager
             , ((modifier .|. shiftMask, xK_t),  withFocused $ windows . sink)
