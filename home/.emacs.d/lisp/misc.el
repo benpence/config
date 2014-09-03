@@ -50,6 +50,28 @@
   require-final-newline              t
   )
 
+
+; Toggle between narrowing and widening
+; Original: github.com/mwfogleman/config/ /home/.emacs.d/michael.org#narrowing-and-widening
+(defun narrow-or-widen-dwim (p)
+  "If the buffer is narrowed, it widens. Otherwise, it narrows intelligently.
+Intelligently means: region, subtree, or defun, whichever applies
+first.
+
+With prefix P, don't widen, just narrow even if buffer is already
+narrowed."
+  (interactive "P")
+  (declare (interactive-only))
+  (cond ((and (buffer-narrowed-p) (not p))
+          (widen))
+        ((region-active-p)
+          (narrow-to-region (region-beginning) (region-end)))
+        ((derived-mode-p 'org-mode)
+          (org-narrow-to-subtree))
+        ((derived-mode-p 'prog-mode)
+          (narrow-to-defun))))
+(dbulysse-add-keys '(("C-c n" narrow-or-widen-dwim)))
+
 ; Global keys
 (dbulysse-add-keys '(
   ; Reload init file
