@@ -28,3 +28,6 @@
 [submodule "home/.emacs.d/elpa/haskell-mode"]
 	path = home/.emacs.d/elpa/haskell-mode
 	url = https://github.com/haskell/haskell-mode
+[submodule "home/.emacs.d/elpa/evil-org-mode"]
+	path = home/.emacs.d/elpa/evil-org-mode
+	url = https://github.com/edwtjo/evil-org-mode

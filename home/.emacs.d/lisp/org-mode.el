@@ -49,6 +49,9 @@
   ; Start up showing all headlines
   org-startup-folded            'content
   org-startup-indented          t
+
+  ; end-of-line and beginning-of-line are org aware
+  org-special-ctrl-a/e          t
   )
 
 ; Face customizations

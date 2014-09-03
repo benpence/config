@@ -1,4 +1,4 @@
-(require 'evil)
+(require 'evil-org)
 
 (defun evil-undefine ()
  "Leave some bindings alone.
