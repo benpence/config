@@ -33,7 +33,6 @@
     (let
       ( (browse-url-browser-function 'browse-url-generic)
         (browse-url-generic-program  "~/bin/tor-browser")
-        (browse-url-generic-args     '("-new-tab"))
         )
       (org-open-at-point))))))
 
