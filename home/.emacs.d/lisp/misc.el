@@ -5,9 +5,11 @@
   initial-scratch-message ""        ; empty scratch buffer
   )
 
-; Bars
+; Tabs
 (setq-default indent-tabs-mode nil) ; disable tabs
+(setq         tab-width        4)
 
+; Bars
 (menu-bar-mode 0)                   ; disable menubar on frames
 (column-number-mode t)              ; show column in mode line
 
