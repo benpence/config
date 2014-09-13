@@ -14,9 +14,9 @@
   ; Delete old backups silently
   delete-old-versions    t
   ; Oldest backups to keep
-  kept-old-versions      2
+  kept-old-versions      6
   ; Newest backups to keep
-  kept-new-versions      6
+  kept-new-versions      12
   ; Create numbered backups
   version-control        t
   )
