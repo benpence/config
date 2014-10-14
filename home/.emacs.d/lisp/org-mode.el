@@ -41,6 +41,13 @@
 
   ; TODO changes
   org-archive-save-context-info '(time file category todo priority itags olpath ltags)
+  org-todo-keywords             '((sequence
+                                  "INFO"    ; A TODO item with more info
+                                  "TODO"
+                                  "|"       ; Rest of keywords are essentially "DONE"
+                                  "DONE"
+                                  "WAIT(@)" ; Waiting on another task
+                                ))
   ; Save all archived items in centralized file
   org-archive-location          "~/Documents/me/org_archive::"
   org-log-done                  'time
