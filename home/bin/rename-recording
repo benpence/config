@@ -11,5 +11,5 @@ while read img; do
     new_prefix="${date_created}_${time_created}_${recorder_id}"
 
     mv -i "$img" "${new_prefix}.${suffix}"
-    echo mv $img "${new_prefix}.${suffix}"
+    echo mv -i $img "${new_prefix}.${suffix}"
 done
