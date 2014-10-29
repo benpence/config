@@ -13,18 +13,18 @@ while read f; do
         substr($3, 5, 2);       
     }' <<< $f`
     
-    for i in `seq 1 10`; do
+    for i in `seq 1 1000`; do
         new_prefix="${c}_${i}"
         if [ -a "${new_prefix}.${suffix}" ]; then
             continue
         fi
 
         mv $f "${new_prefix}.${suffix}"
-#        echo mv $f "${new_prefix}.${suffix}"
+        echo mv $f "${new_prefix}.${suffix}"
 
         if [ -f $original ]; then
             mv $original "${new_prefix}_original.${suffix}"
-#            echo mv $original "${new_prefix}_original.${suffix}"
+            echo mv $original "${new_prefix}_original.${suffix}"
         fi;
 
         break
