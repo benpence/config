@@ -20,7 +20,8 @@
 
 
 [push]
-    default         = matching
+    ; Forces specifying the branch
+    default         = nothing
 
 [core]
     editor          = emacs -nw
@@ -28,3 +29,5 @@
 
 [merge]
     tool            = vimdiff
+    ; Will only allow fast forward merges unless you specify "git merge --no-ff"
+    ff              = only
