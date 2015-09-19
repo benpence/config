@@ -3,3 +3,4 @@ loop=2
 softvol=yes
 softvol-max=2000
 heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
+osdlevel=1
