@@ -31,6 +31,3 @@
 [submodule "home/.emacs.d/elpa/evil-org-mode"]
 	path = home/.emacs.d/elpa/evil-org-mode
 	url = https://github.com/edwtjo/evil-org-mode
-[submodule "home/.emacs.d/elpa/go-mode"]
-	path = home/.emacs.d/elpa/go-mode
-	url = https://github.com/dominikh/go-mode.el

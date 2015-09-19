@@ -25,10 +25,8 @@
   "backup.el"            ; Backup optons
   "show-paren.el"        ; Matching parens options/keys
 
-  "git.el"               ; diff color tweaks
   "haskell-mode.el"      ; haskell editing tweaks
   "scala-mode.el"
-  "go-mode.el"
 
   "misc.el"              ; simple editor tweaks
   ))
