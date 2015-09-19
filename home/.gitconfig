@@ -24,7 +24,7 @@
     default         = nothing
 
 [core]
-    editor          = emacs -nw
+    editor          = vim
     excludesfile    = ~/.gitignore
 
 [merge]
