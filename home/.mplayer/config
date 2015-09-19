@@ -1,4 +1,5 @@
 # Write your default config options here!
+loop=2
 softvol=yes
 softvol-max=2000
 heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
