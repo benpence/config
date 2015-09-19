@@ -1,0 +1,5 @@
+xscreensaver -no-splash &
+# Race condition hack to make sure
+# server is available
+sleep 1
+xscreensaver-command -lock
