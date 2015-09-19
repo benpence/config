@@ -3,12 +3,10 @@
 *background:                Black
 
 # Font
-urxvt.font:                 xft:Inconsolata:style=Medium:pixelsize=14
-urxvt.boldFont:             xft:Inconsolata:style=Medium:pixelsize=14
-
-# Urxvt
-urxvt.saveLines:            0
-urxvt.iso14755:             false
+urxvt.font:                 xft:Inconsolata:style=Medium:pixelsize=16
+urxvt.boldFont:             xft:Inconsolata:style=Medium:pixelsize=16
 
 # Scrollbar
 *scrollBar:                 false
+urxvt.saveLines:            0
+urxvt.iso14755:             false
