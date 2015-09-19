@@ -1,5 +1,7 @@
+set -eu
 while read img; do
     v=`exiftool -"CreateDate" $img`
+    #v=`exiftool -globalTimeShift -8 -"CreateDate" $img`
     date_created=`awk '{ print $4 }' <<< $v | sed 's/:/-/g'`
     time_created=`awk '{ print $5 }' <<< $v`
 
@@ -22,7 +24,7 @@ while read img; do
         if [ -f "$original" ]; then
             mv "$original" "${new_prefix}_original.${suffix}"
             echo mv $original "${new_prefix}_original.${suffix}"
-        fi;
+        fi
 
         break
     done

@@ -1,3 +1,4 @@
+set -eu
 while read f; do
     f=`basename $f`
     prefix=`awk -F"." '{ print $1 }' <<< $f`
