@@ -5,6 +5,23 @@
   initial-scratch-message ""        ; empty scratch buffer
   )
 
+; Paste
+(setq x-select-enable-clipboard t)
+
+(unless window-system
+ (when (getenv "DISPLAY")
+  (defun xsel-cut-function (text &optional push)
+    (with-temp-buffer
+      (insert text)
+      (call-process-region (point-min) (point-max) "xsel" nil 0 nil "--clipboard" "--input")))
+  (defun xsel-paste-function()
+    (let ((xsel-output (shell-command-to-string "xsel --clipboard --output")))
+      (unless (string= (car kill-ring) xsel-output)
+    xsel-output )))
+  (setq interprogram-cut-function 'xsel-cut-function)
+  (setq interprogram-paste-function 'xsel-paste-function)
+))
+
 ; Tabs
 (setq-default indent-tabs-mode nil) ; disable tabs
 (setq-default tab-width        4)
