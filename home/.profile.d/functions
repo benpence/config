@@ -65,12 +65,13 @@ mk(){
 
 # Record your actions their timings and timestamp the results
 record(){
-    d=$(date +"%Y-%m-%d_%H-%M-%S")
+    PREFIX="${1:-}"
+    d=$(date +"%Y-%m-%d_%H-%M-%S.%N")
 
-    local actions="${d}_actions.script"
-    local timing="${d}_timing.script"
+    local actions="${PREFIX}${d}_actions.script"
+    local timing="${PREFIX}${d}_timing.script"
 
-    script --timing=$timing $actions 2> /dev/null
+    RECORDING=1 script --quiet --timing="$timing" "$actions" 2> /dev/null
 
     echo $actions $timing
 }

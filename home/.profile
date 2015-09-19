@@ -2,3 +2,4 @@
 . ~/.profile.d/functions
 . ~/.profile.d/options
 . ~/.profile.d/X
+#. ~/.profile.d/recordings
