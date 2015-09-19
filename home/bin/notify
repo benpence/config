@@ -1,5 +1,5 @@
 #!/bin/sh
-TIMEOUT=3
+TIMEOUT=2
 
 # Kill existing notifications
 pkill notify-osd
