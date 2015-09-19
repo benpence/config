@@ -1,5 +1,5 @@
 ### Default editor ###
-export EDITOR="emacs"
+export EDITOR="vim"
 export VISUAL=$EDITOR   
 
 ### PATH ###
