@@ -1,4 +1,0 @@
-176 :Exec amixer sset Master,0 1+
-174 :Exec amixer sset Master,0 1-
-160 :Exec amixer sset Master,0 toggle
-Mod1 space :Exec fbrun
