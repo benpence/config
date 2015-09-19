@@ -114,4 +114,13 @@ will yield
             ? )
           seperator))))
 
+(defun dbulysse-org-projects ()
+  (interactive)
+
+  (let*
+    ( (org-agenda-files         '("~/Documents/me/agenda/Projects.org"))
+      (org-agenda-prefix-format "  ")
+      )
+    (org-todo-list)))
+
 (provide 'dbulysse)

@@ -10,6 +10,7 @@
 (dbulysse-add-keys '(
     ("C-c c" org-capture) ; Create task from text
     ("C-c a" org-agenda)  ; Agenda
+    ("C-c l" dbulysse-org-projects)  ;
     ))
 
 ; Customizations
@@ -69,3 +70,12 @@
  '(outline-2 ((t (:inherit font-lock-string-face))))
  '(outline-8 ((t (:inherit font-lock-variable-name-face))))
  )
+(setq
+  org-priority-faces '(
+    (?A . (:inherit outline-1))
+    (?B . (:inherit outline-2))
+    (?C . (:inherit outline-3))
+    (?D . (:inherit outline-4))
+    (?E . (:inherit outline-5))
+    )
+  )
