@@ -19,7 +19,7 @@
   org-agenda-files              '(
                                   "~/Documents/me/agenda/"
                                  )
-  org-agenda-format-date        "%d-%m-%Y"
+  org-agenda-format-date        "%d-%m-%Y %a"
   ; Agenda starts on today
   org-agenda-start-on-weekday   nil
   ; Show 90 days in the future
@@ -28,10 +28,10 @@
   org-agenda-show-all-dates     nil
   ; Item format
   org-agenda-prefix-format '(
-    (agenda . " %i %(dbulysse-org-truncate-category 8 \"~\" \":\") %?12t% s")
+    (agenda   . " %i %(dbulysse-org-truncate-category 4 \"~\" \":\") %-12t%-8 s")
     (timeline . "  % s")
     (todo . " %i %-12:c")
-    (tags . " %i %(dbulysse-org-truncate-category 8 \"~\" \":\") %?12t% s")
+    (tags . " %i %(dbulysse-org-truncate-category 4 \"~\" \":\") %-12t%-8 s")
     (search . " %i %-12:c"))
   ; Don't show tags in the agenda
   org-agenda-remove-tags        t
