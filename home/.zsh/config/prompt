@@ -32,7 +32,14 @@ nodisplay=%{$'\e[8m'%}
 reversecolors=%{$'\e[7m'%}
 reversecolorsoff=%{$'\e[27m'%}
 
+# Provides version control env ${vcs_info_msg_0_} in prompts
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats       "(${light_purple}%b${normal})"
+zstyle ':vcs_info:*' actionformats "(${light_purple}%b${normal}/${light_purple}%a${normal})"
+precmd () { vcs_info }
+setopt prompt_subst
+
 # Format prompt is
 #       $       ...       [relative_path:user@host timestamp]
-PROMPT="${at_normal}%(!.#.$) " # Left
-RPROMPT="[${light_green}%~${normal}:${light_red}%n${normal}@${light_yellow}%m${normal} %*]" # Right
+PROMPT="%(!.#.$) " # Left
+RPROMPT="[${light_green}%~${normal}\${vcs_info_msg_0_}:${light_red}%n${normal}@${light_yellow}%m${normal}]" # Right
