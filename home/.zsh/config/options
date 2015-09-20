@@ -23,6 +23,8 @@ compctl -g '*(-/) .*(-/)' cd                # cd only to directories
 
 ### MISC ###
 export REPORTTIME=30    # Time long commands
+export WORDCHARS="${WORDCHARS//[&;\/]}"
+                        # Don't skip over &;/ when moving around
 setopt AUTO_CONTINUE    # Persist background tasks on exit
 
 # Watch other users login/out
