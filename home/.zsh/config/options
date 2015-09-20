@@ -14,7 +14,6 @@ bindkey '^R' history-incremental-pattern-search-backward
 ### tab completion ###
 setopt AUTO_LIST                # List choices for tab completion
 setopt AUTO_MENU                # After showing list, rotate through
-# setopt AUTO_LIST AUTO_MENU    # Overides AUTO_MENU. Jump to first match automatically
 
 # Constrain completion list by command with regex
 compctl -g '*.java' + -g '*(-/)' javac                                  # javac only .java files
