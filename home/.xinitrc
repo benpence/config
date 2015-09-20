@@ -10,6 +10,9 @@ setxkbmap   -layout "dvp,us"        \
 # Make cursor pointer instead of cross
 xsetroot -cursor_name left_ptr
 
+# Increase key repeat rates
+xset r rate 200 30
+
 # Synaptics daemon prevents touchpad for a moment after keyboard input
 [[ "" == `pgrep -x syndaemon` ]] && syndaemon -t -k -i 1 -d &
 
