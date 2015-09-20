@@ -25,11 +25,8 @@ xset r rate 200 30
 # Show mpd song change notifications
 [[ "" == `pgrep -x mpd` ]] && mpd $HOME/Music/config &
 
-# Launch urxvt if it's not running yet
-[[ "" == `pgrep -x urxvt` ]] && urxvt &
-
 # Launch emacs daemon if it's not running yet
 [[ "" == `pgrep -f "emacs.*daemon"` ]] && emacs --daemon &
 
 # Launch scim (Smart Common Input Method) daemon for foreign input
-[[ "" == `pgrep scim` ]] && scim -d &
+[[ "" == `pgrep scim` ]] && scim -d
