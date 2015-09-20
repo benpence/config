@@ -13,7 +13,7 @@ ekill(){
 
 # Custom functions
 wifi(){
-    while [ "0" != `sudo ip link set down wlan0 && sudo netctl restart "$@"; echo $?` ]; do
+    while [ "0" != `sudo ip link set down wifi0 && sudo netctl restart "$@"; echo $?` ]; do
         echo Trying...;
         sudo journalctl -xn --no-pager
     done;
