@@ -7,6 +7,8 @@ alias 'emacs=emacsclient -nw -c' # Console emacs only
 alias 'vim=vim -p'      # Open multiple files in tabs
 alias 'ssh=ssh-add -l > /dev/null || ssh-add && ssh'
                         # Add all private keys if they haven't been added yet
+alias 'tmux=tmux list-sessions 2> /dev/null && tmux attach || tmux'
+                        # Forces only 1 tmux session
 
 ekill(){
     emacsclient -e '(kill-emacs)'
