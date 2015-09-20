@@ -16,11 +16,10 @@ setopt AUTO_LIST                # List choices for tab completion
 setopt AUTO_MENU                # After showing list, rotate through
 
 # Constrain completion list by command with regex
-compctl -g '*.java' + -g '*(-/)' javac                                  # javac only .java files
-compctl -g '*.c' + -g '*(-/)' gcc                                       # gcc only .c files
-compctl -g '*.gz' + -g '*(-/)' gunzip gzcat                             # extract only .gz files
-compctl -g '*(-/) .*(-/)' cd                                            # cd only to directories
-#compctl -g '(^(*.o|*.class|*.jar|*.gz|*.gif|*.a|*.Z))' more less vim    # don't read binary files
+compctl -g '*.java' + -g '*(-/)' javac      # javac only .java files
+compctl -g '*.c' + -g '*(-/)' gcc           # gcc only .c files
+compctl -g '*.gz' + -g '*(-/)' gunzip gzcat # extract only .gz files
+compctl -g '*(-/) .*(-/)' cd                # cd only to directories
 
 ### MISC ###
 export REPORTTIME=30    # Time long commands
