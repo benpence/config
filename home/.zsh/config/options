@@ -8,6 +8,8 @@ setopt HIST_IGNORE_ALL_DUPS     # Remove older duplicate command for new one
 setopt HIST_IGNORE_SPACE        # Don't save commands with leading space
 setopt HIST_REDUCE_BLANKS       # Trim superfluous whitespace from history
 setopt HIST_VERIFY              # Expand '!' history expansion before submit
+bindkey '^R' history-incremental-pattern-search-backward
+                                # Enable globbing in history searching
 
 ### tab completion ###
 setopt AUTO_LIST                # List choices for tab completion
