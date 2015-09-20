@@ -59,8 +59,36 @@ mk(){
     else
         mkdir -p "$( dirname ${@: -1} )"
     fi;
-    
+
     $@
+}
+
+# Backup last argument by appending '~' character. Recursively copies directory if applicable.
+# Examples:
+#   # Copies FILE to FILE~ and deletes original
+#   bk rm FILE
+#
+#   # Backs up FILE to FILE~ before inline replacing all 'b' characters with 'a'
+#   bk sed -i 's/a/b/' FILE
+bk(){
+    local last="${@: -1}"
+
+    # Remove trailing slash
+    last="$(sed 's/\/$//' <<< "$last")"
+
+    while [[ -a "${last}~" ]]; do
+        last="${last}~"
+    done
+
+    # Destination is directory -> Cp recursive and handle optional '/'
+    if [[ -d "$last" ]]; then
+        cp -a "$last" "${last}~"
+    fi;
+
+    # Run command if more than one argument
+    if [[ $# -ne 1 ]]; then
+        $@
+    fi
 }
 
 # Record your actions their timings and timestamp the results
