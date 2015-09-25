@@ -38,13 +38,13 @@ set dir=~/.vim/session/swp//
 
 " Restore registers on open with no file arguments
 set viminfo=%,\"4,'100,/100,:100,h,f1
-"           |  |  |    |    |    | +-file marks 0-9,A-Z stored ('m' key)
-"           |  |  |    |    |    +-don't remember highlighted items
-"           |  |  |    |    +-command-line history saved
-"           |  |  |    +-search history saved
-"           |  |  +-files marks saved
-"           |  +-lines saved each register
-"           +-save/restore buffer list
+"           |  |  |    |    |    | `- file marks 0-9,A-Z stored ('m' key)
+"           |  |  |    |    |    `- don't remember highlighted items
+"           |  |  |    |    `- command-line history saved
+"           |  |  |    `- search history saved
+"           |  |  `- file marks saved
+"           |  `-lines saved each register
+"           `-save/restore buffer list
 
 """ Command line options
 set ruler                           " Ruler on bottom of screen
@@ -86,7 +86,7 @@ set showmatch                       " on bracket insert, briefly jump to the mat
 """ Split windows
 set winminheight=0                  " split windows are collapsible to just statuslines
 
-"Line numbers
+""" Line numbers
 set hlsearch
 
 set lbr!                            " wrap long lines by certain characters, not arbitrary
