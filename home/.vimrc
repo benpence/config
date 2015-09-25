@@ -25,16 +25,16 @@ set backupdir=~/.vim/session/backup
 
 " Undo history
 set undofile
-set undodir=~/.vim/session/undo
+set undodir=~/.vim/session/undo//
 
 " Placement in buffer
-set viewdir=~/.vim/session/view
+set viewdir=~/.vim/session/view//
 
 " History of : and previous search patterns
 set history=1000
 
 " Swap files
-set dir=~/.vim/session/swp
+set dir=~/.vim/session/swp//
 
 " Restore registers on open with no file arguments
 set viminfo=%,\"4,'100,/100,:100,h,f1
