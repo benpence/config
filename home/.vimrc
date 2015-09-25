@@ -123,3 +123,6 @@ function! g:SwapDiff()
     vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 endfunc
 nnoremap <leader>r :call g:SwapDiff()<cr>
+
+" Center screen on current line
+nmap <space> zz
